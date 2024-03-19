@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Michroma&display=swap');
+
+:root{
+	--black: #1C1C1C; /* rgb(28, 28, 28) */
+	--black_shadow: #000000;
+	--blue_lu:rgba(210, 224, 237);
+	--blue_tg: rgba(44,164,215);
+	--blue_azure: rgba(88, 132, 231);
+	--blue_penn:rgba(11, 25, 87);
+	--blue_dark:rgba(20, 16, 49);
+	--peach: rgba(255, 190, 152);
+	--green: #81AE3A; /* rgb(129, 174, 58)  */
+	--green_salad: #CCE032;
+	--white_milk: #F5F5F5;
+	--yellow:rgba(240, 246, 0);  /*  rgb(251, 255, 44) */
+	--bordo: #811B1B;
+	--blue_tg: rgba(44,164,215);
+}
+
+body{
+	margin: 0;
+  padding: 0;
+	background: var(--blue_lu);
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.nav-link {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+p, li {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a{
+	text-decoration: none;
+	color: var(--black);
+}
+/*footer{
+	background: var(--blue_dark);
+}
+*/
+.clip_overflow_x{
+  overflow-x: clip!important;
+}
+.clip_overflow_all{
+	overflow: hidden;
+}
+
+/* COLORS */
+
+.black{
+	color: var(--black);
+}
+.black_bg{
+	background-color: var(--black);
+}
+.black_bg_op{
+	background-color:var(--black);
+	opacity: .8;
+}
+.blue_tg_bg{
+	background-color: var(--blue_tg);
+}
+.blue_tg_bg_op{
+	background-color: var(--blue_tg)!important;
+	opacity: .7!important;
+}
+.bordo{
+	color: var(--bordo);
+}
+.bordo_bg{
+	background-color: var(--bordo);
+}
+.green{
+	color: var(--green);
+}
+.green_bg{
+	background-color: var(--green); 
+}
+.white_milk{
+	color: var(--white_milk);
+}
+.white_milk_bg{
+	color: var(--white_milk);
+}
+.yellow{
+	color: var(--yellow);
+}
+.yellow_bg{
+	background-color: var(--yellow);
+}
+
+.answer {
+	background: linear-gradient(70deg, var(--blue_tg), var(--blue_lu));
+
+	border: 2px solid var(--bl);
+	border-radius: 8px;
+}
+
+.gradient_bg{
+	background: linear-gradient(30deg, var(--blue_dark), var(--black), var(--blue_penn));
+}
+
+
+
+/*
+
+Various on devices
+
+*/
+
+
+/* DESCTOP */
+
+@media (min-width: 1025px){
+	.logo{
+		width: 17.5em;
+		padding-left:  2.5em;
+		padding-top: 0.625em;
+		margin-bottom: 0.625em;
+	}
+	h1{
+		font-size: 48px;
+	}
+	p, li{
+		font-size: 20px;
+	}
+	.details{
+		font-size: 18px;
+	}
+
+	.glass{
+		background: linear-gradient(var(--green), var(--black), 0.35);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border-radius: 20px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		padding: 2em;
+	}
+	.block_product{
+		width:86%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.carousel_text_block{
+		padding: 15em 8em;
+		color: var(--white_milk);
+		height: 1072px;
+	}	
+
+	.features_card_img{
+		height: 12em;
+	}
+
+	.m_3{
+		margin: 3em;
+	}
+	.mt_-26{
+		margin-top: -26em!important;
+	}
+	.mt_-34{
+		margin-top: -34em!important;
+	}
+}
+
+
+/*  TABLET */
+@media (min-width: 811px) and (max-width: 1024px){
+	.logo{
+		width: 280px;
+		padding-left: 40px;
+		padding-top: 10px;
+		margin-bottom: 10px;
+	}
+	h1{
+		font-size: 48px;
+	}
+	p, li{
+		font-size: 20px;
+	}
+	.details{
+		font-size: 18px;
+	}
+	.glass{
+		background: linear-gradient(var(--green), var(--black), 0.35);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border-radius: 20px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		padding: .5em;
+	}
+
+	.block_product{
+		width: 96%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.features_card_img{
+		height: 9em;
+	}
+
+	.carousel_text_block{
+		padding: 12em 4em;
+		color: var(--white_milk);
+		height: 53.125em;
+	}
+
+	.m_3{
+		margin: .3em;
+	}
+	.mt_-26{
+		margin-top: 0em;
+	}
+	.mt_-34{
+		margin-top: 2em!important;
+	}
+}
+
+/* PHONE */
+
+@media (max-width: 810px) {
+	.logo{
+		width: 11.25em;
+		min-width: 120px;
+		padding-top: 10px;
+	}
+
+	p, li{
+		font-size: 18px;
+	}
+	h1{
+		font-size: 36px;
+	}
+	.details{
+		font-size: 16px;
+	}
+
+	.glass{
+		background: linear-gradient(var(--green), var(--black), 0.35);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border-radius: 20px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		padding: .5em;
+	}
+
+	.block_product{
+		width: 96%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.features_card_img{
+		height: 9em;
+	}
+
+	.carousel_text_block{
+		padding: 12em 4em;
+		color: var(--white_milk);
+		height: 850px;
+	}
+
+	.m_3{
+		margin: .3em;
+	}
+	.mt_-26{
+		margin-top: 0em;
+	}
+
+	.mt_-34{
+		margin-top: 0em;
+	}
+
+
+}
+
+
+
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ 
+
+
+#game{
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.glass h2{
+  opacity: 1!important; /* Reset opacity for the h2 element */
+}
+
+
+.carousel_text_block h2 {
+  font-size: 30px;
+}
+
+
+.mt_-10{
+	margin-top: -10em;
+}
+
+.mt_10{
+	margin-top: 10em;
+}
+.mt_15{
+	margin-top: 15em;
+}
+.mt_20{
+	margin-top: 20em;
+}
+.mt_30{
+	margin-top: 30em;
+}
+.mt_40{
+	margin-top: 40em;
+}
+.mt_46{
+	margin-top: 46em;
+}
+.pe_38{
+	padding-right: 38em;
+}
+
+.up_z{
+	position: relative;
+	z-index: 999;
+}
+
+
+.nav-link{
+	color:var(--white_milk);
+	font-size: 18px;
+}
+.nav-link:hover{
+	color:var(--green);
+}
+.nav-link:focus{
+	color:var(--yellow);
+}
+.nav-tabs{
+	border-bottom:none;
+}
+.nav-tabs .nav-link{
+	border:none;
+}
+.dropdown-item{
+	color: var(--white_milk);
+}
+.dropdown-item:hover{
+	color: var(--yellow);
+	background-color: var(--black_shadow);
+}
+.smm_link{
+	height: 3.6em;
+  padding-left: .7em;
+  padding-right: .7em;
+  padding-top: 1em;
+}
+.app_button{
+	height: 3.6em;
+	padding-top: 1em;
+}
+.copyright{
+	font-size: 14px;
+	color: var(--white_milk);
+}
+.tg_icon{
+	background: url(static/img/tg_button.svg) no-repeat;
+}
+
+.icon_xs{
+	width: 1.25em;
+}
+
+.icon_score{
+	width: 2.1em;
+}
+
+
+.inset_card{
+	border-radius: 20px;
+	box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+}
+
+.tariff_card{
+  min-width: 10em;
+  max-width: 14em;
+  height: 20em;
+  padding: 12px;
+  margin: .9em;
+}
+.tariff_card_img{
+	height: 10.75em;
+}
+.about_card_img{
+	height: 9em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.team_card_img{
+	height: 9em;
+	margin-left: auto;
+	margin-right: auto;
+}
+.block{
+	height: 60.625em;
+}
+
+.team_card{
+  width: 20em;
+  height: 30em;
+  padding: 12px;
+}
+
+.logo_footer{
+	width: 15.625em;
+}

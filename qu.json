@@ -1,0 +1,84 @@
+[
+
+	{
+		"qiestion":"Кто уронил вазу?",
+		"answers":{
+			"Кошка":true,
+			"Динозавр": false,
+			"Она сама":false,
+			"Программист":false,
+		},
+		"category":"cat"
+	},
+	{
+		"qiestion":"Кто уронил сервер?",
+		"answers":{
+			"Кошка":false,
+			"Динозавр": false,
+			"Он сам":false,
+			"Программист":true,
+		},
+		"category":"cat"
+	},
+	{
+		"qiestion":"Кто сидит на шкафу?",
+		"answers":{
+			"Кошка":true,
+			"Динозавр": false,
+			"Хаски":false,
+			"Программист":false,
+		},
+		"category":"cable"
+	},
+	{
+		"qiestion":"Кто придумал вопросы для тестового квиза?",
+		"answers":{
+			"Леший":false,
+			"ИИ": false,
+			"Русалка":false,
+			"Программист":true,
+		},
+		"category":"wheel"
+	},
+	{
+		"qiestion":"Кто уронил другую вазу?",
+		"answers":{
+			"Коза":false,
+			"Ветер": true,
+			"Она сама":false,
+			"Сверчок":false,
+		},
+		"category":"wheel"
+	},
+	{
+		"qiestion":"Кто забыл покормить кошку?",
+		"answers":{
+		"Такса":false,
+		"Сембернар": false,
+		"Хаски":false,
+		"Программист":true,
+		},
+		"category":"wheel"
+	},
+	{
+		"qiestion":"Кто лежит на столе?",
+		"answers":{
+			"Кошка":true,
+			"Две кошки": false,
+			"Три кошки":false,
+			"Программист":false,
+		},
+		"category":"barrel"
+	},
+	{
+		"qiestion":"Кто всё-таки уронил вазу?",
+		"answers":{
+			"Кошка":true,
+			"Годзилла": false,
+			"Она сама!":false,
+			"Тиранозавр":false,
+		},
+		"category":"cat"
+	}
+
+]
