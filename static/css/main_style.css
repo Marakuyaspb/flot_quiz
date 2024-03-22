@@ -427,3 +427,27 @@ Various on devices
 .logo_footer{
 	width: 15.625em;
 }
+
+
+/* CATEGORIES PINS */
+
+@media (min-width: 811px){
+	.questions_container {
+	  display: grid;
+	  grid-gap: 25px;
+	  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	  width: 96%;
+	  margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media (max-width: 810px) {
+	.questions_container {
+	  display: grid;
+	  grid-gap: 25px;
+	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	  width: 96%;
+	  margin-left: auto;
+		margin-right: auto;
+	}
+}

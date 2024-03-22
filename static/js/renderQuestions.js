@@ -1,17 +1,18 @@
 function render() {
-	productsPage.render();	
+	questionsPage.render();	
 }
 
 spinnerPage.render();
 
-let CATALOG = [];
+let POOL = [];
 render();
 
+
 /* redirect */
-fetch('./qu.json')
+fetch('qu.json')
     .then(res => res.json())
     .then(body => {
-		CATALOG = body;
+		POOL = body;
 
 		setTimeout(() => {
 			spinnerPage.handleClear();

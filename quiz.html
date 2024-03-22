@@ -43,25 +43,22 @@
 	<center>
 		<div class='d-flex flex-row bd-highlight mb-3'>
 			<div class='p-1'>
+				<img class='icon_score' src='static/icons/build-48.png'>
+				<div id='score_build' class=''></div>
+			</div>
+			<div class='p-1'>
 				<img class='icon_score' src='static/icons/wheel-48.png'>
 				<div id='score_wheel' class=''></div>
 			</div>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/food-48.png'>
-				<div id='score_food' class=''>7</div>
+				<div id='score_food' class=''></div>
 			</div>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/map-48.png'>
-				<div id='score_map' class=''>1</div>
+				<div id='score_map' class=''></div>
 			</div>
-			<div class='p-1'>
-				<img class='icon_score' src='static/icons/rope-48.png'>
-				<div id='score_rope' class=''>12</div>
-			</div>
-			<div class='p-1'>
-				<img class='icon_score' src='static/icons/medical-48.png'>
-				<div id='score_medical' class=''></div>
-			</div>
+
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/cat-48.png'>
 				<div id='score_cat' class=''></div>
@@ -69,21 +66,12 @@
 		</div>
 	</center>
 
+<!-- 	<img src='static/icons/pins/pin2.png' onclick=''>
+ -->
 
-	<div class=''>
-		<h4 class='p-3'>Почему кошка спит днем так, будто совести у неё совсем нет?</h4>
-		<div class="d-flex flex-column bd-highlight mb-3 px-2">
-		<button class='answer p-3 mb-2'>Потому!</button>
-		<button class='answer p-3 mb-2'>Потому!</button>
-		<button class='answer p-3 mb-2'>Потому!</button>
-		<button class='answer p-3 mb-2'>Да потому что!</button>
-		</div>
-	</div>
-
-	
-
-		<div id="goods_show"></div> 
-		<div id='goods_details'></div>
+		<div id="questions_all"></div>
+		<div id="questions_show" class ="questions_container"></div> 
+		<div id='questions_details'></div>
 
 		<div id="spinner"></div> 
 		<div id="error"></div> 
@@ -102,10 +90,16 @@
 	</center>
 </footer>
 
-
-	<script src='static/js/renderQuestions.js'></script>
+	<script src='static/js/root.js'></script>
 	<script src='static/js/pushQuestions.js'></script>
-	<script src='static/js/filterQuestions.js'></script>
+
+	<script src='static/js/spinner.js'></script>	
+	<script src='static/js/error.js'></script>
+	<script src='static/js/renderQuestions.js'></script>
+	
+	<script src='static/js/score.js'></script>	
+
+
 
 	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
 </body>
