@@ -1,0 +1,44 @@
+#game{
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* QUESTIONS PINS */
+
+@media (min-width: 811px){
+	.questions_container {
+	  display: grid;
+	  grid-gap: 25px;
+	  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	  width: 96%;
+	  margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media (max-width: 810px) {
+	.questions_container {
+	  display: grid;
+	  grid-gap: 25px;
+	  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+	  width: 96%;
+	  margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.hide_it{
+	display: none;
+}
+.show_it{
+	display: block;
+}
+
+
+.answer_btn{
+	width: 76%;
+	padding: 15px 8px;
+	background: var(--peach);
+	border-radius: 8px;
+	border: none;
+}

@@ -1,29 +1,19 @@
 class Questions {
-
 	render() {
-
-		
-		let htmlPins = '';
-		
-		POOL.forEach(({category, icon}) => {
-			
+		let htmlPins = '';	
+		POOL.forEach(({id, qiestion, answers, icon, category}) => {	
 			htmlPins += `
-			
-			<img class='${category}' src='${icon}' onclick=''>
+			<img id='${id}' class='${category}' src='${icon}' onclick='showDetails();'>
 			`;
 			});
-			console.log(htmlPins);
-
 
 			const html = `
-			
 			<div class="questions_container">	
 					${htmlPins}
 			</div>
 		`;
 		ROOT_QUESTIONS.innerHTML = html;
-		
 		}
 	}
-console.log('Questions rendered!');
+
 const questionsPage = new Questions();

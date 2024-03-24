@@ -279,19 +279,10 @@ Various on devices
 		margin-top: 0em;
 	}
 
-
 }
-
 
 
 /**/ /**/ /**/ /**/ /**/ /**/ /**/ 
-
-
-#game{
-	max-width: 400px;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 
 .glass h2{
@@ -373,9 +364,6 @@ Various on devices
 	font-size: 14px;
 	color: var(--white_milk);
 }
-.tg_icon{
-	background: url(static/img/tg_button.svg) no-repeat;
-}
 
 .icon_xs{
 	width: 1.25em;
@@ -393,61 +381,8 @@ Various on devices
   -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
 }
 
-.tariff_card{
-  min-width: 10em;
-  max-width: 14em;
-  height: 20em;
-  padding: 12px;
-  margin: .9em;
-}
-.tariff_card_img{
-	height: 10.75em;
-}
-.about_card_img{
-	height: 9em;
-	margin-left: auto;
-	margin-right: auto;
-}
 
-.team_card_img{
-	height: 9em;
-	margin-left: auto;
-	margin-right: auto;
-}
-.block{
-	height: 60.625em;
-}
-
-.team_card{
-  width: 20em;
-  height: 30em;
-  padding: 12px;
-}
 
 .logo_footer{
 	width: 15.625em;
-}
-
-
-/* CATEGORIES PINS */
-
-@media (min-width: 811px){
-	.questions_container {
-	  display: grid;
-	  grid-gap: 25px;
-	  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-	  width: 96%;
-	  margin-left: auto;
-		margin-right: auto;
-	}
-}
-@media (max-width: 810px) {
-	.questions_container {
-	  display: grid;
-	  grid-gap: 25px;
-	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	  width: 96%;
-	  margin-left: auto;
-		margin-right: auto;
-	}
 }

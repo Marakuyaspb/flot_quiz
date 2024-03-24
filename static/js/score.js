@@ -16,7 +16,7 @@ function ScoreCat(answer){
 		score_cat++;
 		document.getElementById("score_cat").innerHTML = score_cat;
 	}
-}
+}ч
 
 function ScoreMap(answer){
 	if (answer == true){ 
