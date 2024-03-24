@@ -22,19 +22,20 @@ body{
 	margin: 0;
   padding: 0;
 	background: var(--blue_lu);
+	font-family: "Michroma", sans-serif;
 }
 
 
 h1, h2, h3, h4, h5, h6,
 .nav-link {
-  font-family: "Michroma", sans-serif;
+  /*font-family: "Michroma", sans-serif;*/
   font-weight: 400;
   font-style: normal;
 }
 
 
 p, li {
-  font-family: "Bai Jamjuree", sans-serif;
+  /*font-family: "Bai Jamjuree", sans-serif;*/
   font-weight: 400;
   font-style: normal;
 }
@@ -98,12 +99,6 @@ a{
 	background-color: var(--yellow);
 }
 
-.answer {
-	background: linear-gradient(70deg, var(--blue_tg), var(--blue_lu));
-
-	border: 2px solid var(--bl);
-	border-radius: 8px;
-}
 
 .gradient_bg{
 	background: linear-gradient(30deg, var(--blue_dark), var(--black), var(--blue_penn));

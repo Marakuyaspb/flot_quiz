@@ -42,7 +42,7 @@
 
 	<center>
 
-		<div class='d-flex flex-row bd-highlight mb-2'>
+		<div class='d-flex flex-row bd-highlight p-3'>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/build-48.png'>
 				<div id='score_build' class=''>6</div>
@@ -72,8 +72,21 @@
 	<div class='my-5'>
 
 		<div id='questions_all'></div>
-		<div id='questions_details'></div>
-		<div id='add_answers'></div>
+
+		<div id='the_question'>
+			<div id='questions_details'></div>
+			<div id='add_answers'></div>
+
+			<div id='no' class='hide_it'>
+				<p>Не верно, нужно немного подумать.</p>
+				<p>Попробуй пока ответить на другие вопросы!
+				</div>
+			<div id='yes' class='hide_it'>
+				<p>Отлично! Это верный ответ.</p>
+			</div>
+			<div id='win'></div>
+
+		</div>
 
 		<div id='next_q' class='hide'></div>
 
