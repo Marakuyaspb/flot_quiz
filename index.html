@@ -45,23 +45,23 @@
 		<div class='d-flex flex-row bd-highlight p-3'>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/build-48.png'>
-				<div id='score_build' class=''>6</div>
+				<div id='score_build' class=''>0</div>
 			</div>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/wheel-48.png'>
-				<div id='score_wheel' class=''>3</div>
+				<div id='score_wheel' class=''>0</div>
 			</div>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/food-48.png'>
-				<div id='score_food' class=''></div>
+				<div id='score_food' class=''>0</div>
 			</div>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/map-48.png'>
-				<div id='score_map' class=''>2</div>
+				<div id='score_map' class=''>0</div>
 			</div>
 			<div class='p-1'>
 				<img class='icon_score' src='static/icons/cat-48.png'>
-				<div id='score_cat' class=''></div>
+				<div id='score_cat' class=''>0</div>
 			</div>
 		</div>
 
@@ -79,9 +79,22 @@
 		</div>
 
 		<div id='result'>
-			<div id='no' class='hide_it'></div>
+			<div id='no' class='hide_it'>
+				<h5>Не верно :( </h5>
+			<p>Попробуй пока ответить на другие вопросы!
+				
+				<center>
+					<button type="button" class="btn btn-danger" onclick='playNext(event);'>Попробую ещё</button>
+				</center>
+			</div>
 
-			<div id='yes' class='hide_it'></div>
+			<div id='yes' class='hide_it'>
+				<h5>Отлично!</h5>
+  			<p>Это верный ответ.</p>
+				<center>
+					<button type="button" class="btn btn-success" onclick='playNext(event);'>Дальше</button>
+				</center>
+			</div>
 
 			<div id='win' class='hide_it'>
 				<p>Ура! Вопросы закончились, ты молодец!</p>

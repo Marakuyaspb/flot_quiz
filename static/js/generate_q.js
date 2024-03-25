@@ -108,7 +108,6 @@ function showDetails(event){
 			let category = questionAllDetails.category;
 			
 			
-	/* render new html about the single product */
   			let questions_details = document.getElementById('questions_details');
 
   			questions_details.innerHTML = 
@@ -128,6 +127,8 @@ function showDetails(event){
 		} /*else console.log('Check your json!')*/;
 	}
 	/*return currentID;*/
+	console.log(ROOT_QUESTIONS, ROOT_DETAIL, ROOT_RESULT);
+
 }
 
 function checkResult(event){
@@ -139,41 +140,51 @@ function checkResult(event){
   	let win = document.getElementById("win");
   	/*console.log(currentVar);*/
 
-  	add_answers = document.getElementById("add_answers");
-  	while (add_answers.firstChild) {
-    add_answers.removeChild(add_answers.firstChild);
-	}
+  	ROOT_RESULT.classList.remove('hide_it');
   	
-  	console.log(currentID);
+  	/*console.log(currentID);*/
 
   	if (currentVar === 'false') {
   		ROOT_DETAIL.classList.add('hide_it');
-  		no.innerHTML += `
-  			<h5>Не верно :( </h5>
-			<p>Попробуй пока ответить на другие вопросы!
-				
-				<center>
-					<button type="button" class="btn btn-danger" onclick='playNext(event);'>Попробую ещё</button>
-				</center>
-			  `;
   		no.classList.remove('hide_it');
+  		yes.classList.add('hide_it');
+
+  		/*console.log(no);*/
 
   		
   	} else if (currentVar === 'true') {
   		ROOT_DETAIL.classList.add('hide_it');
-
-  		yes.innerHTML += `
-  			<h5>Отлично!</h5>
-  			<p>Это верный ответ.</p>
-				<center>
-					<button type="button" class="btn btn-success" onclick='playNext(event);'>Дальше</button>
-				</center>
-			  `;
   		yes.classList.remove('hide_it');
+  		no.classList.add('hide_it');
+
+  		/*console.log(yes);*/
+
+  	} else {
+  		console.log('check smth');
   	}
+	console.log('I checked your answer');
+
+	add_answers = document.getElementById("add_answers");
+  	while (add_answers.firstChild) {
+    	add_answers.removeChild(add_answers.firstChild);
+	}
+
 }
 
 function playNext(event) {
-	ROOT_RESULT.classList.add('hide_it');
 	ROOT_QUESTIONS.classList.remove('hide_it');
+	ROOT_RESULT.classList.add('hide_it');
+
+	console.log('show pins again!');
+}
+
+
+
+
+
+function isAlredyWin(){
+
+	/* check number of elements .q_pin */
+
+	console.log('Wow!');
 }
