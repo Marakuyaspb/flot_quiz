@@ -6,13 +6,14 @@ const ROOT_RESULT = document.getElementById('result');
 const ROOT_SPINNER = document.getElementById('spinner');
 const ROOT_ERROR = document.getElementById('error');
 
+let currentID;
 
 class Questions {
 	render() {
 		let htmlPins = '';	
 		POOL.forEach(({id, qiestion, answers, icon, category}) => {	
 			htmlPins += `
-			<img id='${id}' class='${category}' src='${icon}' onclick='showDetails(event);'>
+			<img id='${id}' class='q_pin ${category}' src='${icon}' onclick='showDetails(event);'>
 			`;
 			});
 
@@ -67,11 +68,11 @@ const errorPage = new Error();
 function render() {
 	questionsPage.render();	
 }
-	spinnerPage.render();
-	let POOL = [];
-	render();
+spinnerPage.render();
+let POOL = [];
+render();
 
-	fetch('http://zdgalepv.beget.tech/static/qu.json')
+fetch('http://zdgalepv.beget.tech/static/qu.json')
 	    .then(res => res.json())
 	    .then(body => {
 			POOL = body;
@@ -87,7 +88,6 @@ function render() {
 
 
 
-
 function showDetails(event){
 	
  	const clickedElement = event.currentTarget;
@@ -97,11 +97,10 @@ function showDetails(event){
 		if (POOL[i].id == currentID){
 
   			let questionAllDetails = POOL[i];
- 
 
 	/* hide current html */
   			ROOT_QUESTIONS.classList.add('hide_it');
-
+  			ROOT_DETAIL.classList.remove('hide_it');
 
 	/* define vars */
 			let qiestion = questionAllDetails.qiestion;
@@ -117,7 +116,6 @@ function showDetails(event){
 			</div>
 			`; 
   			
-
 			let a = Object.keys(questionAllDetails.answers);
 			for (let i = 0; i < a.length; ++i) {
 			  let key = a[i];
@@ -129,6 +127,7 @@ function showDetails(event){
 			}
 		} /*else console.log('Check your json!')*/;
 	}
+	/*return currentID;*/
 }
 
 function checkResult(event){
@@ -139,17 +138,42 @@ function checkResult(event){
   	let no = document.getElementById("no");
   	let win = document.getElementById("win");
   	/*console.log(currentVar);*/
+
+  	add_answers = document.getElementById("add_answers");
+  	while (add_answers.firstChild) {
+    add_answers.removeChild(add_answers.firstChild);
+	}
   	
+  	console.log(currentID);
 
   	if (currentVar === 'false') {
   		ROOT_DETAIL.classList.add('hide_it');
+  		no.innerHTML += `
+  			<h5>Не верно :( </h5>
+			<p>Попробуй пока ответить на другие вопросы!
+				
+				<center>
+					<button type="button" class="btn btn-danger" onclick='playNext(event);'>Попробую ещё</button>
+				</center>
+			  `;
   		no.classList.remove('hide_it');
+
   		
   	} else if (currentVar === 'true') {
   		ROOT_DETAIL.classList.add('hide_it');
 
+  		yes.innerHTML += `
+  			<h5>Отлично!</h5>
+  			<p>Это верный ответ.</p>
+				<center>
+					<button type="button" class="btn btn-success" onclick='playNext(event);'>Дальше</button>
+				</center>
+			  `;
   		yes.classList.remove('hide_it');
-  		console.log('yes');
   	}
+}
 
+function playNext(event) {
+	ROOT_RESULT.classList.add('hide_it');
+	ROOT_QUESTIONS.classList.remove('hide_it');
 }
