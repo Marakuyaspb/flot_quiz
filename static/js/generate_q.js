@@ -1,5 +1,8 @@
 /* ROOT*/
 const ROOT_QUESTIONS = document.getElementById('questions_all');
+const ROOT_DETAIL = document.getElementById('the_question');
+const ROOT_RESULT = document.getElementById('result');
+
 const ROOT_SPINNER = document.getElementById('spinner');
 const ROOT_ERROR = document.getElementById('error');
 
@@ -64,24 +67,23 @@ const errorPage = new Error();
 function render() {
 	questionsPage.render();	
 }
-spinnerPage.render();
-let POOL = [];
-render();
+	spinnerPage.render();
+	let POOL = [];
+	render();
 
-fetch('http://zdgalepv.beget.tech/static/qu.json')
-    .then(res => res.json())
-    .then(body => {
-		POOL = body;
-		setTimeout(() => {
-			spinnerPage.handleClear();
-			render();
-		}, 1000);
-    })
-    .catch(() => {
-        spinnerPage.handleClear();
-    	errorPage.render();
-    })
-
+	fetch('http://zdgalepv.beget.tech/static/qu.json')
+	    .then(res => res.json())
+	    .then(body => {
+			POOL = body;
+			setTimeout(() => {
+				spinnerPage.handleClear();
+				render();
+			}, 1000);
+	    })
+	    .catch(() => {
+	        spinnerPage.handleClear();
+	    	errorPage.render();
+	    })
 
 
 
@@ -109,19 +111,45 @@ function showDetails(event){
 			
 	/* render new html about the single product */
   			let questions_details = document.getElementById('questions_details');
-  			console.log(questions_details);
 
   			questions_details.innerHTML = 
 			`<h5 class="the_question mb-5 mx-5">${qiestion}</h5>
 			</div>
 			`; 
-  			console.log(questions_details);
+  			
 
 			let a = Object.keys(questionAllDetails.answers);
 			for (let i = 0; i < a.length; ++i) {
 			  let key = a[i];
-			  document.getElementById("add_answers").innerHTML += "<button class='answer_btn mb-4 mx-5'>" + key + "</button>";
+			  let value = questionAllDetails.answers[key];
+			  console.log(value);
+
+			  document.getElementById("add_answers").innerHTML += `<button id='${value}' class='answer_btn mb-3 mx-5' onclick='checkResult(event);'>${key}</button>
+			  `;
 			}
 		} /*else console.log('Check your json!')*/;
 	}
+}
+
+function checkResult(event){
+	const clickedAnswer = event.currentTarget;
+  	const currentVar = clickedAnswer.id;
+
+  	let yes = document.getElementById("yes");
+  	let no = document.getElementById("no");
+  	let win = document.getElementById("win");
+  	/*console.log(currentVar);*/
+  	
+
+  	if (currentVar === 'false') {
+  		ROOT_DETAIL.classList.add('hide_it');
+  		no.classList.remove('hide_it');
+  		
+  	} else if (currentVar === 'true') {
+  		ROOT_DETAIL.classList.add('hide_it');
+
+  		yes.classList.remove('hide_it');
+  		console.log('yes');
+  	}
+
 }
