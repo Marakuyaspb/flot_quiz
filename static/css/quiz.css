@@ -45,3 +45,12 @@
 	border: none;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.glass_score{
+	background: linear-gradient(var(--blue_azure), var(--black), 0.35);
+
+	border-radius: 20px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	padding: 1.5em;
+	height: 4.5em;
+}

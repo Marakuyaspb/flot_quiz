@@ -19,11 +19,11 @@ class Questions {
 		const shuffledPool = POOL.sort(() => Math.random() - 0.5);
 
 		shuffledPool.forEach( ({ id, question, answers, icon, category }) => {
-			if (category === 'general' && generalCount < 8) {
+			if (category === 'general' && generalCount < 7) {
 				selectedItems.push({ id, question, answers, icon, category });
 				generalCount++;
 			} 
-			else if (category === 'tech' && techCount < 7) {
+			else if (category === 'tech' && techCount < 8) {
 				selectedItems.push({ id, question, answers, icon, category });
 				techCount++;
 			}
@@ -117,6 +117,10 @@ function showDetails(event){
 	
  	const clickedElement = event.currentTarget;
   	const currentID = clickedElement.id;
+    
+    const element = document.getElementById(currentID);
+    // Mark it
+    element.classList.add('i_was_clicked');;
   	
    	for (let i = 0; i < POOL.length; ++i) {
 		if (POOL[i].id == currentID){
@@ -126,6 +130,8 @@ function showDetails(event){
 		/* hide current html */
   			ROOT_QUESTIONS.classList.add('hide_it');
   			ROOT_DETAIL.classList.remove('hide_it');
+
+  		
 
 		/* define vars */
 			let qiestion = questionAllDetails.qiestion;
@@ -150,13 +156,35 @@ function showDetails(event){
 	}
 }
 
+
+
+
+function isAlredyWin(){
+	pins = document.getElementsByClassName("q_pin");
+
+	if (pins.length == 0) {
+  		let yes = document.getElementById("yes");
+		yes.remove();
+		console.log(yes);
+
+		let win = document.getElementById("win");
+		win.classList.remove('hide_it');
+	}
+	
+}
+
+
+
 function checkResult(event){
 	const clickedAnswer = event.currentTarget;
   	const currentVar = clickedAnswer.id;
 
   	let yes = document.getElementById("yes");
   	let no = document.getElementById("no");
-  	let win = document.getElementById("win");
+  	
+
+  	let clicked_pin = document.querySelector(".i_was_clicked");
+
 
   	ROOT_RESULT.classList.remove('hide_it');
   	
@@ -167,23 +195,28 @@ function checkResult(event){
   		yes.classList.add('hide_it');	
   	} 
   	else if (currentVar === 'true') {
+  		/* remove pin */
+  		clicked_pin.remove();
+  		
+
+  		/* add score*/
+  		if (clickedAnswer.classList.contains('tech')) {
+  			ScoreTech();  	
+		} 
+		else if (clickedAnswer.classList.contains('general')) {
+			ScoreGeneral();
+		}
+
+		isAlredyWin();
+
   		ROOT_DETAIL.classList.add('hide_it');
   		yes.classList.remove('hide_it');
   		no.classList.add('hide_it');
 
-  		if (clickedAnswer.classList.contains('tech')) {
-  			ScoreTech();
-		  	console.log('tech!');
-		} 
-		else if (clickedAnswer.classList.contains('general')) {
-			ScoreGeneral();
-		  	console.log('GENERAL!');
-		}
   	} 
   	else {
-  		console.log('check smth');
+  		console.log('check json!');
   	}
-	console.log('I checked your answer');
 
 	add_answers = document.getElementById("add_answers");
   	while (add_answers.firstChild) {
@@ -195,17 +228,4 @@ function checkResult(event){
 function playNext(event) {
 	ROOT_QUESTIONS.classList.remove('hide_it');
 	ROOT_RESULT.classList.add('hide_it');
-
-	console.log('show pins again!');
-}
-
-
-
-
-
-function isAlredyWin(){
-
-	/* check number of elements .q_pin */
-
-	console.log('Wow!');
 }
