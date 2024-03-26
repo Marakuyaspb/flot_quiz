@@ -56,7 +56,9 @@ p, li {
   font-weight: 400;
   font-style: normal;
 }*/
-
+.navbar-brand{
+	font-size: 1em!important;
+}
 a{
 	text-decoration: none;
 	color: var(--black);

@@ -154,7 +154,10 @@ function showDetails(event){
 			  let key = a[i];
 			  let value = questionAllDetails.answers[key];
 
-			  document.getElementById("add_answers").innerHTML += `<button id='${value}' class='${category} answer_btn mb-3 mx-2' onclick='checkResult(event);'>${key}</button>
+			  document.getElementById("add_answers").innerHTML += `
+			  <center>
+			  	<button id='${value}' class='${category} answer_btn mb-3 mx-2' onclick='checkResult(event);'>${key}</button>
+			  </center>
 			  `;
 			}
 		}
