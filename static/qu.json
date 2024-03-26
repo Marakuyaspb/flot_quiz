@@ -8,8 +8,8 @@
 			"1722":false,
 			"1732":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"build"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"2",
@@ -20,8 +20,8 @@
 			"Село Бишбалта":true,
 			"Село Ягодная поляна ":false
 		},
-		"icon":"static/icons/pins/coral.png",
-		"category":"map"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"3",
@@ -32,8 +32,8 @@
 			"Васильево":false,
 			"Архиерейская Дача":false
 		},
-		"icon":"static/icons/pins/shell.png",
-		"category":"map"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"4",
@@ -44,8 +44,8 @@
 			"Посёлок Паратск":false,
 			"Станция Зелёный Дол":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"map"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"5",
@@ -56,8 +56,8 @@
 			"1918":false,
 			"1922":false
 		},
-		"icon":"static/icons/pins/sea_star.png",
-		"category":"build"
+		"icon":"static/icons/ship.png",
+		"category":"tech"
 	},
 	{
 		"id":"6",
@@ -68,8 +68,8 @@
 		"Волжский сталелитейный завод ":false,
 		"Паратские судоремонтные мастерские":true
 		},
-		"icon":"static/icons/pins/sea_star.png",
-		"category":"build"
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
 	},
 	{
 		"id":"7",
@@ -80,8 +80,8 @@
 			"Красный металлист":true,
 			"Волжский сталевар":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"build"
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
 	},
 	{
 		"id":"8",
@@ -92,8 +92,8 @@
 			"1941":false,
 			"1945":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"cat"
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
 	},
 	{
 		"id":"9",
@@ -104,8 +104,8 @@
 			"Калюжный":true,
 			"Альбатрос":false
 		},
-		"icon":"static/icons/pins/sea_star.png",
-		"category":"build"
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
 	},
 	{
 		"id":"10",
@@ -116,8 +116,8 @@
 			"Константин Кузнецов":false,
 			"Иван Папанин":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"wheel"
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
 	},
 	{
 		"id":"11",
@@ -128,8 +128,8 @@
 			"1947":false,
 			"1949":true
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"food"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"12",
@@ -140,8 +140,8 @@
 			"Зеленоградск":false,
 			"Кронштадт":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"map"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"13",
@@ -152,8 +152,8 @@
 			"1704":false,
 			"1705":false
 		},
-		"icon":"static/icons/pins/coral.png",
-		"category":"map"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"14",
@@ -164,8 +164,8 @@
 			"1720":false,
 			"1721":false
 		},
-		"icon":"static/icons/pins/food.png",
-		"category":"food"
+		"icon":"static/icons/ship.png",
+		"category":"general"
 	},
 	{
 		"id":"15",
@@ -176,8 +176,32 @@
 			"Иван Крузенштерн":false,
 			"Василий Головин":false
 		},
-		"icon":"static/icons/pins/pin2.png",
-		"category":"wheel"
+		"icon":"static/icons/ship.png",
+		"category":"general"
+	},
+	{
+		"id":"16",
+		"qiestion":"Кошка на корабле это... ",
+		"answers":{
+			"Роскошь":false,
+			"Необходимость":true,
+			"Когтистое вооружение":false,
+			"Миф":false
+		},
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
+	},
+	{
+		"id":"17",
+		"qiestion":"Где есть бизань мачта?",
+		"answers":{
+			"Подводная лодка":false,
+			"Одномачтовое судно":false,
+			"Авианосец":false,
+			"Трехмачтовое судно":true
+		},
+		"icon":"static/icons/buoy.png",
+		"category":"tech"
 	}
 
 ]

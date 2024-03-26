@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&display=swap');
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("../fonts/MPLUSRounded1c-Regular.woff");
+  font-weight: 400;
+}
 
 :root{
 	--black: #1C1C1C; /* rgb(28, 28, 28) */
@@ -18,36 +23,53 @@
 	--blue_tg: rgba(44,164,215);
 }
 
+/*
+.ship_water: #2196f3;
+*/
+
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom:160px;
+}
+
 body{
 	margin: 0;
   padding: 0;
 	background: var(--blue_lu);
-	font-family: "Michroma", sans-serif;
-}
-
-
-h1, h2, h3, h4, h5, h6,
-.nav-link {
-  /*font-family: "Michroma", sans-serif;*/
+	font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+
+/*h1, h2, h3, h4, h5, h6{
+	font-weight: 700;
+}
+
+.nav-link {
+  font-weight: 300;
+  font-style: normal;
+}
 
 p, li {
-  /*font-family: "Bai Jamjuree", sans-serif;*/
   font-weight: 400;
   font-style: normal;
-}
+}*/
 
 a{
 	text-decoration: none;
 	color: var(--black);
 }
-/*footer{
-	background: var(--blue_dark);
+
+footer{
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
-*/
+
+
 .clip_overflow_x{
   overflow-x: clip!important;
 }
@@ -356,7 +378,7 @@ Various on devices
 	padding-top: 1em;
 }
 .copyright{
-	font-size: 14px;
+	font-size: 10px;
 	color: var(--white_milk);
 }
 

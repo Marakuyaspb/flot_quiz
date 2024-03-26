@@ -6,16 +6,18 @@
 
 /* QUESTIONS PINS */
 
+/* TABLET & DESCTOP */
 @media (min-width: 811px){
 	.questions_container {
 	  display: grid;
-	  grid-gap: 25px;
+	  grid-gap: 35px;
 	  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 	  width: 96%;
 	  margin-left: auto;
 		margin-right: auto;
 	}
 }
+/* PHONE */
 @media (max-width: 810px) {
 	.questions_container {
 	  display: grid;
@@ -36,8 +38,8 @@
 
 
 .answer_btn{
-	width: 76%;
-	padding: 15px 8px;
+	width: 100%;
+	padding: 16px 8px;
 	background: var(--peach);
 	border-radius: 8px;
 	border: none;

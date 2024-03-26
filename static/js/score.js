@@ -1,33 +1,13 @@
-function ScoreBuild(answer){
+function ScoreGeneral(answer){
 	if (answer == true){ 
-		score_build++;
-		document.getElementById("score_build").innerHTML = score_build;
-	}
-}
-function ScoreFood(answer){
-	if (answer == true){ 
-		score_food++;
-		document.getElementById("score_food").innerHTML = score_food;
+		score_general++;
+		document.getElementById("score_general").innerHTML = score_general;
 	}
 }
 
-function ScoreCat(answer){
+function ScoreTech(answer){
 	if (answer == true){ 
-		score_cat++;
-		document.getElementById("score_cat").innerHTML = score_cat;
-	}
-}ч
-
-function ScoreMap(answer){
-	if (answer == true){ 
-		score_map++;
-		document.getElementById("score_map").innerHTML = score_map;
-	}
-}
-
-function ScoreWheeel(answer){
-	if (answer == true){ 
-		score_wheel++;
-		document.getElementById("score_wheel").innerHTML = score_wheel;
+		score_tech++;
+		document.getElementById("score_tech").innerHTML = score_tech;
 	}
 }

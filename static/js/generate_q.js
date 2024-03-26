@@ -10,8 +10,32 @@ let currentID;
 
 class Questions {
 	render() {
+		let generalCount = 0;
+		let techCount = 0;
+		let selectedItems = [];
+
+	// Shuffle the POOL array
+		const shuffledPool = POOL.sort(() => Math.random() - 0.5);
+
+		shuffledPool.forEach(({ id, question, answers, icon, category }) => {
+			if (category === 'general' && generalCount < 8) {
+				selectedItems.push({ id, question, answers, icon, category });
+				generalCount++;
+			} else if (category === 'tech' && techCount < 7) {
+				selectedItems.push({ id, question, answers, icon, category });
+				techCount++;
+			}
+
+			if (selectedItems.length === 15) {
+				return;
+			}
+		});
+
+
+
+
 		let htmlPins = '';	
-		POOL.forEach(({id, qiestion, answers, icon, category}) => {	
+		selectedItems.forEach(({id, qiestion, answers, icon, category}) => {	
 			htmlPins += `
 			<img id='${id}' class='q_pin ${category}' src='${icon}' onclick='showDetails(event);'>
 			`;
@@ -111,7 +135,7 @@ function showDetails(event){
   			let questions_details = document.getElementById('questions_details');
 
   			questions_details.innerHTML = 
-			`<h5 class="the_question mb-5 mx-5">${qiestion}</h5>
+			`<h5 class="the_question mb-4 mx-2">${qiestion}</h5>
 			</div>
 			`; 
   			
@@ -121,7 +145,7 @@ function showDetails(event){
 			  let value = questionAllDetails.answers[key];
 			  console.log(value);
 
-			  document.getElementById("add_answers").innerHTML += `<button id='${value}' class='answer_btn mb-3 mx-5' onclick='checkResult(event);'>${key}</button>
+			  document.getElementById("add_answers").innerHTML += `<button id='${value}' class='answer_btn mb-3 mx-2' onclick='checkResult(event);'>${key}</button>
 			  `;
 			}
 		} /*else console.log('Check your json!')*/;
