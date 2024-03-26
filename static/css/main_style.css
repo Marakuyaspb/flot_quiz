@@ -307,99 +307,23 @@ Various on devices
 }
 
 
-.carousel_text_block h2 {
-  font-size: 30px;
-}
-
-
-.mt_-10{
-	margin-top: -10em;
-}
-
-.mt_10{
-	margin-top: 10em;
-}
-.mt_15{
-	margin-top: 15em;
-}
-.mt_20{
-	margin-top: 20em;
-}
-.mt_30{
-	margin-top: 30em;
-}
-.mt_40{
-	margin-top: 40em;
-}
-.mt_46{
-	margin-top: 46em;
-}
-.pe_38{
-	padding-right: 38em;
-}
-
 .up_z{
 	position: relative;
 	z-index: 999;
 }
 
-
-.nav-link{
-	color:var(--white_milk);
-	font-size: 18px;
-}
-.nav-link:hover{
-	color:var(--green);
-}
-.nav-link:focus{
-	color:var(--yellow);
-}
-.nav-tabs{
-	border-bottom:none;
-}
-.nav-tabs .nav-link{
-	border:none;
-}
-.dropdown-item{
-	color: var(--white_milk);
-}
-.dropdown-item:hover{
-	color: var(--yellow);
-	background-color: var(--black_shadow);
-}
-.smm_link{
-	height: 3.6em;
-  padding-left: .7em;
-  padding-right: .7em;
-  padding-top: 1em;
-}
-.app_button{
-	height: 3.6em;
-	padding-top: 1em;
-}
 .copyright{
 	font-size: 10px;
 	color: var(--white_milk);
-}
-
-.icon_xs{
-	width: 1.25em;
 }
 
 .icon_score{
 	width: 2.1em;
 }
 
-
 .inset_card{
 	border-radius: 20px;
 	box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
   -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
-}
-
-
-
-.logo_footer{
-	width: 15.625em;
 }
