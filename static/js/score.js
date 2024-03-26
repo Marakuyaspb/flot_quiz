@@ -1,13 +1,13 @@
-function ScoreGeneral(answer){
-	if (answer == true){ 
-		score_general++;
-		document.getElementById("score_general").innerHTML = score_general;
-	}
+let score_general = 0;
+let score_tech = 0;
+
+function ScoreGeneral(){
+	score_general++;
+	document.getElementById("score_general").innerHTML = score_general;
+
 }
 
-function ScoreTech(answer){
-	if (answer == true){ 
-		score_tech++;
-		document.getElementById("score_tech").innerHTML = score_tech;
-	}
+function ScoreTech(){
+	score_tech++;
+	document.getElementById("score_tech").innerHTML = score_tech;
 }

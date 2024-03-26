@@ -8,6 +8,7 @@ const ROOT_ERROR = document.getElementById('error');
 
 let currentID;
 
+
 class Questions {
 	render() {
 		let generalCount = 0;
@@ -17,11 +18,12 @@ class Questions {
 	// Shuffle the POOL array
 		const shuffledPool = POOL.sort(() => Math.random() - 0.5);
 
-		shuffledPool.forEach(({ id, question, answers, icon, category }) => {
+		shuffledPool.forEach( ({ id, question, answers, icon, category }) => {
 			if (category === 'general' && generalCount < 8) {
 				selectedItems.push({ id, question, answers, icon, category });
 				generalCount++;
-			} else if (category === 'tech' && techCount < 7) {
+			} 
+			else if (category === 'tech' && techCount < 7) {
 				selectedItems.push({ id, question, answers, icon, category });
 				techCount++;
 			}
@@ -30,7 +32,6 @@ class Questions {
 				return;
 			}
 		});
-
 
 
 
@@ -85,18 +86,17 @@ class Error {
         ROOT_ERROR.innerHTML = html;
     }
 }
-
 const errorPage = new Error();
 
 /* RENDER */
 function render() {
 	questionsPage.render();	
 }
-spinnerPage.render();
-let POOL = [];
-render();
+	spinnerPage.render();
+	let POOL = [];
+	render();
 
-fetch('http://zdgalepv.beget.tech/static/qu.json')
+	fetch('http://zdgalepv.beget.tech/static/qu.json')
 	    .then(res => res.json())
 	    .then(body => {
 			POOL = body;
@@ -112,26 +112,25 @@ fetch('http://zdgalepv.beget.tech/static/qu.json')
 
 
 
+
 function showDetails(event){
 	
  	const clickedElement = event.currentTarget;
   	const currentID = clickedElement.id;
   	
-   	for (let i = 0; i < POOL.length; ++i) {	
+   	for (let i = 0; i < POOL.length; ++i) {
 		if (POOL[i].id == currentID){
 
   			let questionAllDetails = POOL[i];
 
-	/* hide current html */
+		/* hide current html */
   			ROOT_QUESTIONS.classList.add('hide_it');
   			ROOT_DETAIL.classList.remove('hide_it');
 
-	/* define vars */
+		/* define vars */
 			let qiestion = questionAllDetails.qiestion;
 			let icon = questionAllDetails.icon;
 			let category = questionAllDetails.category;
-			
-			
   			let questions_details = document.getElementById('questions_details');
 
   			questions_details.innerHTML = 
@@ -143,16 +142,12 @@ function showDetails(event){
 			for (let i = 0; i < a.length; ++i) {
 			  let key = a[i];
 			  let value = questionAllDetails.answers[key];
-			  console.log(value);
 
-			  document.getElementById("add_answers").innerHTML += `<button id='${value}' class='answer_btn mb-3 mx-2' onclick='checkResult(event);'>${key}</button>
+			  document.getElementById("add_answers").innerHTML += `<button id='${value}' class='${category} answer_btn mb-3 mx-2' onclick='checkResult(event);'>${key}</button>
 			  `;
 			}
-		} /*else console.log('Check your json!')*/;
+		}
 	}
-	/*return currentID;*/
-	console.log(ROOT_QUESTIONS, ROOT_DETAIL, ROOT_RESULT);
-
 }
 
 function checkResult(event){
@@ -162,28 +157,30 @@ function checkResult(event){
   	let yes = document.getElementById("yes");
   	let no = document.getElementById("no");
   	let win = document.getElementById("win");
-  	/*console.log(currentVar);*/
 
   	ROOT_RESULT.classList.remove('hide_it');
   	
-  	/*console.log(currentID);*/
 
   	if (currentVar === 'false') {
   		ROOT_DETAIL.classList.add('hide_it');
   		no.classList.remove('hide_it');
-  		yes.classList.add('hide_it');
-
-  		/*console.log(no);*/
-
-  		
-  	} else if (currentVar === 'true') {
+  		yes.classList.add('hide_it');	
+  	} 
+  	else if (currentVar === 'true') {
   		ROOT_DETAIL.classList.add('hide_it');
   		yes.classList.remove('hide_it');
   		no.classList.add('hide_it');
 
-  		/*console.log(yes);*/
-
-  	} else {
+  		if (clickedAnswer.classList.contains('tech')) {
+  			ScoreTech();
+		  	console.log('tech!');
+		} 
+		else if (clickedAnswer.classList.contains('general')) {
+			ScoreGeneral();
+		  	console.log('GENERAL!');
+		}
+  	} 
+  	else {
   		console.log('check smth');
   	}
 	console.log('I checked your answer');
