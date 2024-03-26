@@ -17,8 +17,15 @@ class Questions {
 
 	// Shuffle the POOL array
 		const shuffledPool = POOL.sort(() => Math.random() - 0.5);
+		const uniqueIds = new Set();
 
 		shuffledPool.forEach( ({ id, question, answers, icon, category }) => {
+
+			if (uniqueIds.has(id)) {
+			    return; // Skip this item if the ID is already in the set
+			  }
+
+
 			if (category === 'general' && generalCount < 7) {
 				selectedItems.push({ id, question, answers, icon, category });
 				generalCount++;
@@ -111,8 +118,6 @@ function render() {
 	    })
 
 
-
-
 function showDetails(event){
 	
  	const clickedElement = event.currentTarget;
@@ -157,6 +162,19 @@ function showDetails(event){
 }
 
 
+function isLoose(){
+	current_score_heart = document.getElementById("score_heart");
+	let score_heart_int = parseInt(current_score_heart.innerHTML);
+	
+	if (score_heart_int < 1) {
+		let no = document.getElementById("no");
+		no.remove();
+
+		let loose = document.getElementById("loose");
+		loose.classList.remove('hide_it');
+	}
+}
+
 
 
 function isAlredyWin(){
@@ -165,14 +183,11 @@ function isAlredyWin(){
 	if (pins.length == 0) {
   		let yes = document.getElementById("yes");
 		yes.remove();
-		console.log(yes);
 
 		let win = document.getElementById("win");
 		win.classList.remove('hide_it');
-	}
-	
+	}	
 }
-
 
 
 function checkResult(event){
@@ -182,14 +197,15 @@ function checkResult(event){
   	let yes = document.getElementById("yes");
   	let no = document.getElementById("no");
   	
-
   	let clicked_pin = document.querySelector(".i_was_clicked");
-
 
   	ROOT_RESULT.classList.remove('hide_it');
   	
 
   	if (currentVar === 'false') {
+  		ScoreHeart();
+  		isLoose();
+
   		ROOT_DETAIL.classList.add('hide_it');
   		no.classList.remove('hide_it');
   		yes.classList.add('hide_it');	
@@ -222,7 +238,6 @@ function checkResult(event){
   	while (add_answers.firstChild) {
     	add_answers.removeChild(add_answers.firstChild);
 	}
-
 }
 
 function playNext(event) {
