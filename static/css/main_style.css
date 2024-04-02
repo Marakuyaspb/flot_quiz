@@ -42,20 +42,6 @@ body{
   font-style: normal;
 }
 
-
-/*h1, h2, h3, h4, h5, h6{
-	font-weight: 700;
-}
-
-.nav-link {
-  font-weight: 300;
-  font-style: normal;
-}
-
-p, li {
-  font-weight: 400;
-  font-style: normal;
-}*/
 .navbar-brand{
 	font-size: 1em!important;
 }
@@ -70,7 +56,6 @@ footer{
   width: 100%;
   height: 60px;
 }
-
 
 .clip_overflow_x{
   overflow-x: clip!important;
@@ -129,7 +114,6 @@ footer{
 }
 
 
-
 /*
 
 Various on devices
@@ -152,9 +136,6 @@ Various on devices
 	p, li{
 		font-size: 20px;
 	}
-	.details{
-		font-size: 18px;
-	}
 
 	.glass{
 		background: linear-gradient(var(--green), var(--black), 0.35);
@@ -168,16 +149,6 @@ Various on devices
 		width:86%;
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.carousel_text_block{
-		padding: 15em 8em;
-		color: var(--white_milk);
-		height: 1072px;
-	}	
-
-	.features_card_img{
-		height: 12em;
 	}
 
 	.m_3{
@@ -206,9 +177,7 @@ Various on devices
 	p, li{
 		font-size: 20px;
 	}
-	.details{
-		font-size: 18px;
-	}
+
 	.glass{
 		background: linear-gradient(var(--green), var(--black), 0.35);
 		backdrop-filter: blur(5px);
@@ -216,21 +185,6 @@ Various on devices
 		border-radius: 20px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 		padding: .5em;
-	}
-
-	.block_product{
-		width: 96%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.features_card_img{
-		height: 9em;
-	}
-
-	.carousel_text_block{
-		padding: 12em 4em;
-		color: var(--white_milk);
-		height: 53.125em;
 	}
 
 	.m_3{
@@ -259,9 +213,6 @@ Various on devices
 	h1{
 		font-size: 36px;
 	}
-	.details{
-		font-size: 16px;
-	}
 
 	.glass{
 		background: linear-gradient(var(--green), var(--black), 0.35);
@@ -270,21 +221,6 @@ Various on devices
 		border-radius: 20px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 		padding: .5em;
-	}
-
-	.block_product{
-		width: 96%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.features_card_img{
-		height: 9em;
-	}
-
-	.carousel_text_block{
-		padding: 12em 4em;
-		color: var(--white_milk);
-		height: 850px;
 	}
 
 	.m_3{
