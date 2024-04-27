@@ -1,0 +1,122 @@
+{% extends 'magicflot/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id='' class ='wrap_magic'>
+	<div class='wrap_magic d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
+		<img class ='header_magic' src = '{% static "img/game_magic.png" %}'>
+	</div>
+	<div class='wrap_magic d-block d-md-none'>
+		<img class ='header_magic' src = '{% static "img/vertical_1.png" %}'>
+	</div>
+
+	<div id='game' class ='mt-2 wrap_magic up_z upper_header_img'>
+
+		<center>
+
+			<div class='d-flex justify-content-between glass_score mb-3 py-1'>
+				
+				<div class="d-flex justify-content-start">
+
+					<div class='p-1'>
+						<img class='icon_score' src='{% static "icons/ship.png" %}'>
+						<div id='score_general' class=''>-</div>
+					</div>
+
+					<div class='p-1 ms-3'>
+						<img class='icon_score' src='{% static "icons/buoy_full.png" %}'>
+						<div id='score_tech' class=''>-</div>
+
+					</div>
+				</div>
+
+				<div>
+					<div class='p-1'>
+						<img class='icon_score' src='{% static "icons/heart.png" %}'>
+						<div id='score_heart' class=''>5</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- <hr> -->
+
+		</center>
+
+		<div class='my-2'>
+
+			<div id='questions_all'></div>
+
+			<div id='the_question'>
+				<div id='questions_details'></div>
+				<div id='add_answers'></div>
+			</div>
+
+			<div id='result' class="mt-5 px-5">
+				<div id='no' class='hide_it'>
+					<h3>Не верно :( </h3>
+					<p class='mt-4'>Попробуй пока ответить на другие вопросы!
+					
+					<center>
+						<button type="button" class="btn btn-danger" onclick='playNext(event);'>Попробую ещё</button>
+					</center>
+				</div>
+
+				<div id='yes' class='hide_it'>
+					<h3>Отлично!</h3>
+	  			<p class='mt-4'>Это верный ответ.</p>
+					<center>
+						<button type="button" class="btn btn-success" onclick='playNext(event);'>Дальше</button>
+					</center>
+				</div>
+
+				<div id='loose' class='hide_it'>
+
+					<div class='d-flex justify-content-between mt-2'>
+						<div>
+							<img class='pt-2 pe-3' src='{% static "icons/lighthouse.png" %}'>
+						</div>
+						<div>
+							<h4>Система получила неверные ответы на 5 вопросов :(</h4>
+						</div>
+					</div>
+
+					<p class='mt-2'>Нужно ещё подготовиться! Тебе поможет книга, которую можно скачать здесь:</p>
+
+					<center>
+						<button type="button" class="btn btn-success">Скачать книгу</button>
+					</center>
+				</div>
+
+				<div id='win' class='hide_it'>
+					<h5>Ура! Вопросы закончились!</h5>
+					
+					<div class='d-flex justify-content-between mt-3'>
+						<div>
+							<img class='pt-2 pe-3' src='{% static "icons/win.gif" %}'>
+						</div>
+						<div>
+							<h3>Поздравляем с победой!</h3>
+						</div>
+					</div>
+					
+					<p class='mt-2'>Чтобы мы отправили тебе электронный сертификат о победе, заполни, пожалуйста, форму ниже:</p>
+				</div>
+
+			</div>
+
+			<div id='next_q' class='hide'></div>
+			<div id="spinner"></div> 
+			<div id="error"></div> 
+
+		</div>
+
+	</div>
+</section>
+
+<script src='{% static "js/score.js" %}'></script>	
+<script src='{% static "js/generate_q.js" %}'></script>
+
+
+{% endblock %}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+
+	<link rel='stylesheet' href='static/css/main_style.css' type='text/css'>
+	<link rel='stylesheet' href='static/css/quiz.css' type='text/css'>
+	<title>
+	Город волшебных кораблей
+	</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B2%D0%BE%D0%BB%D1%88%D0%B5%D0%B1%D0%BD%D1%8B%D1%85%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9.%D1%80%D1%84/">ГОРОД ВОЛШЕБНЫХ КОРАБЛЕЙ</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">О проекте</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Галерея</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Викторина</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id='game' class ='mt-2'>
+
+	<center>
+
+		<div class='d-flex justify-content-between glass_score mb-3 py-1'>
+			
+			<div class="d-flex justify-content-start">
+
+				<div class='p-1'>
+					<img class='icon_score' src='static/icons/ship.png'>
+					<div id='score_general' class=''>-</div>
+				</div>
+
+				<div class='p-1 ms-3'>
+					<img class='icon_score' src='static/icons/buoy_full.png'>
+					<div id='score_tech' class=''>-</div>
+
+				</div>
+			</div>
+
+			<div>
+				<div class='p-1'>
+					<img class='icon_score' src='static/icons/heart.png'>
+					<div id='score_heart' class=''>5</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- <hr> -->
+
+	</center>
+
+	<div class='my-2'>
+
+		<div id='questions_all'></div>
+
+		<div id='the_question'>
+			<div id='questions_details'></div>
+			<div id='add_answers'></div>
+		</div>
+
+		<div id='result' class="mt-5 px-5">
+			<div id='no' class='hide_it'>
+				<h3>Не верно :( </h3>
+				<p class='mt-4'>Попробуй пока ответить на другие вопросы!
+				
+				<center>
+					<button type="button" class="btn btn-danger" onclick='playNext(event);'>Попробую ещё</button>
+				</center>
+			</div>
+
+			<div id='yes' class='hide_it'>
+				<h3>Отлично!</h3>
+  			<p class='mt-4'>Это верный ответ.</p>
+				<center>
+					<button type="button" class="btn btn-success" onclick='playNext(event);'>Дальше</button>
+				</center>
+			</div>
+
+			<div id='loose' class='hide_it'>
+
+				<div class='d-flex justify-content-between mt-2'>
+					<div>
+						<img class='pt-2 pe-3' src='static/icons/lighthouse.png'>
+					</div>
+					<div>
+						<h4>Система получила неверные ответы на 5 вопросов :(</h4>
+					</div>
+				</div>
+
+				<p class='mt-2'>Нужно ещё подготовиться! Тебе поможет книга, которую можно скачать здесь:</p>
+
+				<center>
+					<button type="button" class="btn btn-success">Скачать книгу</button>
+				</center>
+			</div>
+
+			<div id='win' class='hide_it'>
+				<h5>Ура! Вопросы закончились!</h5>
+				
+				<div class='d-flex justify-content-between mt-3'>
+					<div>
+						<img class='pt-2 pe-3' src='static/icons/win.gif'>
+					</div>
+					<div>
+						<h3>Поздравляем с победой!</h3>
+					</div>
+				</div>
+				
+				<p class='mt-2'>Чтобы мы отправили тебе электронный сертификат о победе, заполни, пожалуйста, форму ниже:</p>
+			</div>
+
+		</div>
+
+		<div id='next_q' class='hide'></div>
+
+		<div id="spinner"></div> 
+		<div id="error"></div> 
+
+	</div>
+
+</section>
+
+
+
+
+<footer class='gradient_bg'>
+	<center>
+	
+		<p class='copyright pt-4'>© 2024, ГОРОД ВОЛШЕБНЫХ КОРАБЛЕЙ </p>
+
+	</center>
+</footer>
+
+
+	<script src='static/js/score.js'></script>	
+	<script src='static/js/generate_q.js'></script>
+	
+	
+	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
+</body>
+</html>
