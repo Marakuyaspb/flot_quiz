@@ -8,7 +8,7 @@
 			"1722":false,
 			"1732":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -20,7 +20,7 @@
 			"Село Бишбалта":true,
 			"Село Ягодная поляна ":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -32,7 +32,7 @@
 			"Васильево":false,
 			"Архиерейская Дача":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -44,7 +44,7 @@
 			"Посёлок Паратск":false,
 			"Станция Зелёный Дол":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -56,7 +56,7 @@
 			"1918":false,
 			"1922":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"tech"
 	},
 	{
@@ -68,7 +68,7 @@
 		"Волжский сталелитейный завод ":false,
 		"Паратские судоремонтные мастерские":true
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	},
 	{
@@ -80,7 +80,7 @@
 			"Красный металлист":true,
 			"Волжский сталевар":false
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	},
 	{
@@ -92,7 +92,7 @@
 			"1941":false,
 			"1945":false
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	},
 	{
@@ -104,7 +104,7 @@
 			"Калюжный":true,
 			"Альбатрос":false
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	},
 	{
@@ -116,7 +116,7 @@
 			"Константин Кузнецов":false,
 			"Иван Папанин":false
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	},
 	{
@@ -128,7 +128,7 @@
 			"1947":false,
 			"1949":true
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -140,7 +140,7 @@
 			"Зеленоградск":false,
 			"Кронштадт":true
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -152,7 +152,7 @@
 			"1704":false,
 			"1705":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -164,7 +164,7 @@
 			"1720":false,
 			"1721":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -176,7 +176,7 @@
 			"Иван Крузенштерн":false,
 			"Василий Головин":false
 		},
-		"icon":"{% static 'icons/ship.png' %}",
+		"icon":"/static/icons/ship.png",
 		"category":"general"
 	},
 	{
@@ -188,7 +188,7 @@
 			"Когтистое вооружение":false,
 			"Миф":false
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	},
 	{
@@ -200,7 +200,7 @@
 			"Авианосец":false,
 			"Трехмачтовое судно":true
 		},
-		"icon":"{% static 'icons/buoy.png' %}",
+		"icon":"/static/icons/buoy.png",
 		"category":"tech"
 	}
 

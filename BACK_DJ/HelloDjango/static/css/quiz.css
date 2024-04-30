@@ -40,10 +40,11 @@
 .answer_btn{
 	width: 90%;
 	padding: 16px 8px;
-	background: var(--peach);
+	background: linear-gradient(30deg, rgba(34,77,81,255), rgb(147,176,158), rgba(34,77,81,255));
 	border-radius: 8px;
 	border: none;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	color: #fff;
 }
 
 .glass_score{
