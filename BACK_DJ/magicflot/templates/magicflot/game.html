@@ -11,21 +11,22 @@
 		<img class ='header_magic' src = '{% static "img/vertical_1.png" %}'>
 	</div>
 
-	<div id='game' class ='mt-2 glass white_milk wrap_magic up_z upper_header_img'>
+
+	<div id='game' class ='glass white_milk'>
+
 
 		<center>
-
-			<div class='d-flex justify-content-between glass_score mb-3 py-1'>
+			<div class='d-flex justify-content-between glass_score my-3 py-1'>
 				
 				<div class="d-flex justify-content-start">
 
 					<div class='p-1'>
-						<img class='icon_score' src='{% static "icons/ship.png" %}'>
+						<img class='icon_score' src='{% static "icons/history.png" %}'>
 						<div id='score_general' class=''>-</div>
 					</div>
 
 					<div class='p-1 ms-3'>
-						<img class='icon_score' src='{% static "icons/buoy_full.png" %}'>
+						<img class='icon_score' src='{% static "icons/tech.png" %}'>
 						<div id='score_tech' class=''>-</div>
 
 					</div>
@@ -40,18 +41,47 @@
 
 			</div>
 
-			<!-- <hr> -->
 
-		</center>
+		
 
 		<div class='my-2'>
 
-			<div id='questions_all'></div>
+			<div id=''>
+				<div class="questions_container pt-5">
+				
+					<div id='questions_all'>
+						{% for question in questions %}
 
-			<div id='the_question'>
-				<div id='questions_details'></div>
-				<div id='add_answers'></div>
+						<img id='{{ question.id }}' class='q_pin {{ question.category.category }}' src='/static/{{ question.icon }}' onclick="showDetails(event);">
+						{% endfor %}	
+					</div>
+				</div>
+
+
+				<div id='questions'>
+					{% for question in questions %}
+
+					<div id='{{ question.id }}' class='the_question  hide_it'>
+						<div id='questions_details'>
+							<h5 id="{{ question.id }}" class="the_question mb-4 mx-2">{{ question.question }}</h5>
+						</div>
+
+						<div id='add_answers'>
+							<center>
+							  	<button id='{{ question.value_1 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_1 }}</button>
+							  	<button id='{{ question.value_2 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_2 }}</button>
+							  	<button id='{{ question.value_3 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_3 }}</button>
+							  	<button id='{{ question.value_4 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_4 }}</button>
+							  </center>
+						</div>
+					</div>
+
+					{% endfor %}
+				</div>
+				
 			</div>
+
+			
 
 			<div id='result' class="mt-5 px-5">
 				<div id='no' class='hide_it'>
@@ -111,8 +141,10 @@
 			<div id="error"></div> 
 
 		</div>
+		</center>
 
 	</div>
+	
 </section>
 
 <!-- <script src='{% static "js/score.js" %}'></script>	

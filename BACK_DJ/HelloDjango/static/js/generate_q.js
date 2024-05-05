@@ -50,7 +50,7 @@ class Questions {
 			});
 
 			const html = `
-			<div class="questions_container">	
+			<div class="questions_container pt-5">	
 					${htmlPins}
 			</div>
 		`;
