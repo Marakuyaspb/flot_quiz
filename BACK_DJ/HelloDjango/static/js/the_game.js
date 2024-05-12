@@ -1,3 +1,12 @@
+const ROOT_PINS = document.getElementById('questions_all');
+const ROOT_RESULT = document.getElementById('result');
+const ROOT_QUESTIONS = document.getElementById('questions');
+const ROOT_NO = document.getElementById('no');
+const ROOT_YES = document.getElementById('yes');
+const ROOT_LOOSE = document.getElementById('loose');
+const ROOT_WIN = document.getElementById('win');
+
+
 function showDetails(event){
 	let clicked_el = event.target;
     clicked_el.classList.add('i_was_clicked');;
@@ -7,11 +16,12 @@ function showDetails(event){
   	let questions_all = document.getElementById('questions_all');
 
 
-  	questions_all.classList.add('hide_it');
+  	ROOT_PINS.classList.add('hide_it');
 
   	for (let i = 0; i < the_question.length; i++) {
     if (the_question[i].id === clicked_el.id) {
       the_question[i].classList.remove('hide_it');
+      the_question[i].classList.add('currQ');
     } 
   }
 }
@@ -22,57 +32,45 @@ function isLoose(){
 	let score_heart_int = parseInt(current_score_heart.innerHTML);
 	
 	if (score_heart_int < 1) {
-		let no = document.getElementById("no");
-		no.remove();
+		/*let no = document.getElementById("no");*/
+		ROOT_NO.remove();
 
-		let loose = document.getElementById("loose");
-		loose.classList.remove('hide_it');
+		/*let loose = document.getElementById("loose");*/
+		ROOT_LOOSE.classList.remove('hide_it');
 	}
 }
 
 
-
 function isAlredyWin(){
-	pins = document.getElementsByClassName("q_pin");
+	let q_pin = document.getElementsByClassName("q_pin");
 
-	if (pins.length == 0) {
-  		let yes = document.getElementById("yes");
-		yes.remove();
-
-		let win = document.getElementById("win");
-		win.classList.remove('hide_it');
+	if (q_pin.length == 0) {
+		ROOT_YES.remove();
+		ROOT_WIN.classList.remove('hide_it');
 	}	
 }
 
 
+function playNext(event) {
+	console.log('next!');
+	ROOT_PINS.classList.remove('hide_it');
+	ROOT_RESULT.classList.add('hide_it');
+}
+
 function checkResult(event){
 	const clickedAnswer = event.currentTarget;
   	const currentVar = clickedAnswer.id;
-
-  	let yes = document.getElementById("True");
-  	let no = document.getElementById("False");
-  	
   	let clicked_pin = document.querySelector(".i_was_clicked");
-
-  	//ROOT_RESULT.classList.remove('hide_it');
+  	let currQ = document.querySelector(".currQ");
   	
+  	currQ.classList.remove('hide_it');
+  	ROOT_PINS.classList.add('hide_it');
 
-  	if (currentVar === 'False') {
-  		ScoreHeart();
-  		isLoose();
-
-  		//ROOT_DETAIL.classList.add('hide_it');
-  		no.classList.remove('hide_it');
-  		yes.classList.add('hide_it');	
-  	} 
-  	else if (currentVar === 'True') {
-  		/* remove pin */
+  	if (currentVar === 'True') {
   		clicked_pin.remove();
-  		
-
-  		/* add score*/
-  		if (clickedAnswer.classList.contains('tech')) {
-  			ScoreTech();  	
+  		console.log(currentVar);
+  	/* add score */
+  		if (clickedAnswer.classList.contains('technical')) {  			ScoreTech();  	
 		} 
 		else if (clickedAnswer.classList.contains('general')) {
 			ScoreGeneral();
@@ -80,22 +78,27 @@ function checkResult(event){
 
 		isAlredyWin();
 
-  		//ROOT_DETAIL.classList.add('hide_it');
-  		yes.classList.remove('hide_it');
-  		no.classList.add('hide_it');
+		currQ.classList.add('hide_it');
+		currQ.classList.remove('currQ');
+		ROOT_RESULT.classList.remove('hide_it');
+		ROOT_YES.classList.remove('hide_it');
+  		ROOT_NO.classList.add('hide_it');
 
-  	} 
-  	else {
-  		console.log('check json!');
-  	}
 
-	add_answers = document.getElementById("add_answers");
-  	while (add_answers.firstChild) {
-    	add_answers.removeChild(add_answers.firstChild);
-	}
-}
+	} 
+	else if (currentVar === 'False') {
+  		ScoreHeart();
+  		isLoose();
+  			console.log(currentVar);
 
-function playNext(event) {
-	//ROOT_QUESTIONS.classList.remove('hide_it');
-	//ROOT_RESULT.classList.add('hide_it');
+  		currQ.classList.add('hide_it');
+  		currQ.classList.remove('currQ');
+		ROOT_RESULT.classList.remove('hide_it');
+  		ROOT_NO.classList.remove('hide_it');
+		ROOT_YES.classList.add('hide_it');
+
+  	} else {
+		console.log('check your life!');
+	}	
+
 }

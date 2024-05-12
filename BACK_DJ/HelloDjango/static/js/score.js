@@ -1,5 +1,5 @@
 let score_general = 0;
-let score_tech = 0;
+let score_technical = 0;
 let score_heart = 5;
 
 function ScoreGeneral(){
@@ -8,8 +8,8 @@ function ScoreGeneral(){
 }
 
 function ScoreTech(){
-	score_tech++;
-	document.getElementById("score_tech").innerHTML = score_tech;
+	score_technical++;
+	document.getElementById("score_technical").innerHTML = score_technical;
 }
 
 function ScoreHeart(){

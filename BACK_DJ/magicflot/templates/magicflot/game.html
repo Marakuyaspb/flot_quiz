@@ -12,8 +12,7 @@
 	</div>
 
 
-	<div id='game' class ='glass white_milk'>
-
+	<div id='game' class ='glass m-2 white_milk'>
 
 		<center>
 			<div class='d-flex justify-content-between glass_score my-3 py-1'>
@@ -27,7 +26,7 @@
 
 					<div class='p-1 ms-3'>
 						<img class='icon_score' src='{% static "icons/tech.png" %}'>
-						<div id='score_tech' class=''>-</div>
+						<div id='score_technical' class=''>-</div>
 
 					</div>
 				</div>
@@ -38,7 +37,6 @@
 						<div id='score_heart' class=''>5</div>
 					</div>
 				</div>
-
 			</div>
 
 
@@ -63,7 +61,7 @@
 
 					<div id='{{ question.id }}' class='the_question  hide_it'>
 						<div id='questions_details'>
-							<h5 id="{{ question.id }}" class="the_question mb-4 mx-2">{{ question.question }}</h5>
+							<h5 id="{{ question.id }}" class="mb-4 mx-2">{{ question.question }}</h5>
 						</div>
 
 						<div id='add_answers'>
@@ -136,9 +134,6 @@
 
 			</div>
 
-			<div id='next_q' class='hide'></div>
-			<div id="spinner"></div> 
-			<div id="error"></div> 
 
 		</div>
 		</center>
