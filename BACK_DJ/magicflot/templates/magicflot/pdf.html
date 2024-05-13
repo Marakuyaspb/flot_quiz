@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Сертификат победителя</title>
+    <style media="all" type="text/css">
+
+      body {
+        color: #5E5B5B;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        padding: 2em;
+      }
+
+
+      h2, h3, h4 {
+        color: #5E5B5B;
+      }
+      h1{
+        color: #5E5B5B;
+        /* background: -webkit-linear-gradient(30deg, rgba(20, 16, 49), rgba(49,62,79), rgba(218,155,81), rgba(138,93,41));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;*/
+        font-size: 3em;
+        font-weight: 550;
+      }
+      h2{
+        font-size: 2em;
+      }
+      .winner_about{
+        font-size: 1.3em;
+        line-height: .9;
+      }
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%;
+      }
+      td {
+        padding: 5px;
+      }  
+
+      .right{
+        text-align: right!important;
+      }
+      .left{
+        text-align: left!important;
+      }
+      .center{
+        text-align: center!important;
+      }
+      .no_border{
+        border: none;
+      }
+      .center{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .logo{
+        max-width: 10em;
+      }
+      hr{
+        color: #5E5B5B;
+      }
+    </style>
+</head>
+
+<body>
+
+<div class=''>
+
+  <table class='no_border'>
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td class='left no_border'>
+     
+          <img class='logo' src='{{ logo_url }}'>
+
+        </td>
+        <td class='right no_border'>
+          <p>Сертификат победителя № {{ winner.id }}</p>
+          <p>{{ winner.create|date:"d M, Y" }}</p>  
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br> <br>
+
+  <center> 
+  
+    <h1>ПОБЕДИТЕЛЬ</h1>
+    <h2>{{ winner.first_name }} {{ winner.last_name }}</h2>
+
+    <p class='winner_about'>
+  Идущий в будущее верным курсом на борту корабля знаний № {{ winner.school }} в составе экипажа {{ winner.the_class }}.
+    </p>
+
+  </center> 
+
+  <br>  <br>
+  <table class='no_border'>
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td class='left no_border'>
+          <p>Главный Магистрат</p>
+          <p>Города Волшебных Кораблей</p>
+        </td>
+        <td class='no_border'></td>
+        <td class='no_border'></td>
+        <td class='no_border'></td>
+        <td class='no_border center'>
+          <p>
+          <strong>МЕСТО ДЛЯ ПЕЧАТИ</strong>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

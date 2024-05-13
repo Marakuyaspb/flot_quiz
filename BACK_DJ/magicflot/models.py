@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 
 # QUESTIONS
@@ -49,8 +50,10 @@ class Winner (models.Model):
 	id = models.AutoField(primary_key=True)
 	first_name = models.CharField(max_length=30, verbose_name = 'Имя')
 	last_name = models.CharField(max_length=30, verbose_name = 'Фамилия')
-	school = models.CharField(max_length=30, verbose_name = 'Школа')
+	school = models.CharField(max_length=30, verbose_name = 'Школа №')
 	the_class = models.CharField(max_length=30, verbose_name = 'Класс')
+	create = models.DateTimeField(default=timezone.now)
+	
 
 	class Meta:
 		ordering = ['last_name']

@@ -11,6 +11,7 @@ urlpatterns = [
     path('', views.index, name = 'index'),
     path('about/', views.about, name = 'about'),
     path('gallery/', views.gallery, name = 'gallery'),
-    path('game/', views.game, name = 'game')
-    # path('magicflot/', include('magicflot.urls', namespace='magicflot'))
+    path('game/', views.game, name = 'game'),
+    path('get_win_sert/', views.get_win_sert, name='get_win_sert'),
+    path('download_pdf/<int:pk>/', views.download_pdf, name='download_pdf'),
 ]
