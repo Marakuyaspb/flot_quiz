@@ -16,7 +16,7 @@
         font-weight: 400;
         font-style: normal;
         margin: 0;
-        padding: 2em;
+        padding: 3em;
       }
 
 
@@ -47,7 +47,9 @@
       td {
         padding: 5px;
       }  
-
+      .padding_l2{
+        padding-left: 2em;
+      }
       .right{
         text-align: right!important;
       }
@@ -82,13 +84,16 @@
     <tbody>
       <tr>
         <td class='left no_border'>
-     
           <img class='logo' src='{{ logo_url }}'>
-
         </td>
+        
         <td class='right no_border'>
           <p>Сертификат победителя № {{ winner.id }}</p>
-          <p>{{ winner.create|date:"d M, Y" }}</p>  
+          {% load tz %}
+          {% get_current_timezone as TIME_ZONE %}
+          {% timezone "Etc/GMT-3" %}
+          <p>{{ winner.create|date:"d M, Y | H:i:s" }}</p>
+          {% endtimezone %}
         </td>
       </tr>
     </tbody>
@@ -112,7 +117,7 @@
     <thead></thead>
     <tbody>
       <tr>
-        <td class='left no_border'>
+        <td class='padding_l2 left no_border'>
           <p>Главный Магистрат</p>
           <p>Города Волшебных Кораблей</p>
         </td>

@@ -46,6 +46,25 @@ function showDetails(event){
 }
 
 
+function saveQuizInteraction(data) {
+  fetch('/save_quiz_interaction/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.message);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+
+
+
 function isLoose(){
 	current_score_heart = document.getElementById("score_heart");
 	let score_heart_int = parseInt(current_score_heart.innerHTML);
@@ -115,13 +134,26 @@ function checkResult(event){
 
   	} 
   	else {
-  		console.log('check json!');
+  		console.log('check your life!');
   	}
 
 	add_answers = document.getElementById("add_answers");
   	while (add_answers.firstChild) {
     	add_answers.removeChild(add_answers.firstChild);
 	}
+
+
+
+	const data = {
+		play_session_id: /* generate unique session ID */,
+		timezone: new Date().getTimezoneOffset(),
+		question_id: /* get question ID */,
+		category: /* get category */,
+		answer: currentVar === 'True' ? true : false
+	};
+
+	// Save quiz interaction data
+	saveQuizInteraction(data);
 }
 
 function playNext(event) {

@@ -27,14 +27,15 @@ class Question(models.Model):
 		on_delete=models.CASCADE, verbose_name = 'Категория')
 	icon = models.ImageField(upload_to='q_icons/', verbose_name ='Иконка')
 	answer_1 = models.CharField(max_length=100, null=True, verbose_name = 'Ответ 1')
-	value_1 = models.BooleanField(null=True,default=False, verbose_name = 'Верно?')
+	value_1 = models.BooleanField(default=False, verbose_name = 'Верно?')
 	answer_2 = models.CharField(max_length=100, null=True, verbose_name = 'Ответ 2')
-	value_2 = models.BooleanField(null=True, default=False, verbose_name = 'Верно?')
+	value_2 = models.BooleanField(default=False, verbose_name = 'Верно?')
 	answer_3 = models.CharField(max_length=100, null=True, verbose_name = 'Ответ 3')
-	value_3 = models.BooleanField(null=True, default=False, verbose_name = 'Верно?')
+	value_3 = models.BooleanField(default=False, verbose_name = 'Верно?')
 	answer_4 = models.CharField(max_length=100, null=True, verbose_name = 'Ответ 4')
-	value_4 = models.BooleanField(null=True,default=False, verbose_name = 'Верно?')
-
+	value_4 = models.BooleanField(default=False, verbose_name = 'Верно?')
+	play_session_id = models.IntegerField(null=True)
+	
 	class Meta:
 		verbose_name = 'Вопрос'
 		verbose_name_plural = 'Вопросы'

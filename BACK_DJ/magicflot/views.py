@@ -3,9 +3,13 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.loader import get_template
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from xhtml2pdf import pisa
 from .models import Question, Category, Winner
 from .forms import WinnerForm
+
 
 
 def index(request):
@@ -61,3 +65,17 @@ def download_pdf(request, pk):
 	if pisa_status.err:
 		return HttpResponse('Имеют место технические неполадки <pre>' + html + '</pre>')
 	return response
+
+
+
+@csrf_exempt
+def save_quiz_interaction(request):
+	if request.method == 'POST':
+		data = json.loads(request.body)
+		
+		# Save the data to a JSON file
+		with open('quiz_interactions.json', 'a') as file:
+			json.dump(data, file)
+			file.write('\n')
+	
+		return JsonResponse({'message': 'Quiz interaction saved successfully.'})
