@@ -4,39 +4,41 @@
 {% block content %}
 <style type="text/css">
 	.the_form{
+		box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25);
+		border-radius: 18px;
 		max-width: 20em;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 3em;
+		padding: 2em 3em;
 	}
 
 	input {
-		margin: 2px 0px;
+		margin: 6px 0px;
 		background: #ebeced;
 		border-radius: 8px;
 	}
 
 	#id_first_name, #id_last_name, #id_school, #id_the_class {
-		box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
-		-webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
-		-moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+		box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25) inset;
+		-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25) inset;
+		-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25) inset;
 	}
 </style>
 
 
-<div class='container mt-5'>
+<div class='container mt-5 pb-5'>
 	<center>
 		<strong>Заполни поля формы.</strong>
 		<strong>Файл сертификата сгенерируется и скачется автоматически.</strong>
 	</center>
 </div>
 
-<div class='the_form'>
+<div class='the_form mt-2'>
 	<form action='' method="post">
 	{{ winner_form }}
 	{% csrf_token %}
-		<center class='mt-3'>
-			<input type="submit" class="btn btn-success" value="Скачать PDF-файл">
+		<center class='mt-5'>
+			<input type="submit" class="white_milk btn gradient_bg_blue" value="Скачать PDF-файл">
 		</center>
 	</form>
 </div>

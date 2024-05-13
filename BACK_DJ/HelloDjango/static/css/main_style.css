@@ -123,6 +123,9 @@ footer{
 .white_milk{
 	color: var(--white_milk);
 }
+.white_milk:hover{
+	color: var(--white_milk);
+}
 .white_milk_bg{
 	color: var(--white_milk);
 }
@@ -138,6 +141,16 @@ footer{
 	background: linear-gradient(30deg, var(--blue_dark), var(--black), rgba(34,77,81,255));
 }
 
+.gradient_bg_blue{
+	background:linear-gradient(30deg, rgb(20, 16, 49), rgb(5, 123, 123), rgb(34, 77, 81));
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25);
+}
+.gradient_bg_blue:hover{
+	background:linear-gradient(30deg, rgb(15, 9, 58), rgb(11, 138, 138), rgb(42, 66, 50));
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25) inset;
+		-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25) inset;
+		-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25) inset;
+}
 
 /*
 
