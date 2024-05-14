@@ -1,16 +1,22 @@
 <style>
-	.g_menu_link{
-		font-size: 1em!important;
-		line-height: 1.1em;
-	}
-	.sea {color:#224d51;}
+.g_menu_link{
+	font-size: 1em!important;
+	line-height: 1.1em;
+}
+.sea {color:#224d51;}
+.carousel-caption{
+	background: rgba(34,77,81,0.7);
+	position: inherit!important;
+	bottom: 5rem;
+	right: 0;
+	left: 0;
+}
 </style>
 
 
 <div class="container-fluid">
 	<div class="d-flex justify-content-start my-3 sea">
-		<a href='{% url "gallery_history" %}' class='mx-2'><p class='sea g_menu_link'>Исторические корабли</p></a> ~
-		<a href='{% url "gallery_modern" %}' class='mx-2'><p class='sea g_menu_link'>Современные корабли</p></a> ~ 
-		<a href='{% url "gallery_portraits" %}' class='mx-2'><p class='sea g_menu_link'>Портреты моряков</p></a>
+		<a href='{% url "gallery_history" %}' class='mx-2'><p class='sea g_menu_link'>Галерея парусников</p></a> ~
+		<a href='{% url "gallery_modern" %}' class='mx-2'><p class='sea g_menu_link'>Современные корабли</p></a> 
 	</div>
 </div>

@@ -6,6 +6,11 @@ const ROOT_YES = document.getElementById('yes');
 const ROOT_LOOSE = document.getElementById('loose');
 const ROOT_WIN = document.getElementById('win');
 
+let gameSessionData = {
+    session_id: 'unique_session_id', 
+    timezone: new Date().getTimezoneOffset(),
+    questions: []
+};
 
 function showDetails(event){
 	let clicked_el = event.target;
@@ -57,48 +62,74 @@ function playNext(event) {
 	ROOT_RESULT.classList.add('hide_it');
 }
 
+/*function getCurrQuestion(event) {
+	const clickedEl = event.currentTarget;
+	const currQuestion = clickedEl.classList;
+}*/
+
 function checkResult(event){
 	const clickedAnswer = event.currentTarget;
-  	const currentVar = clickedAnswer.id;
-  	let clicked_pin = document.querySelector(".i_was_clicked");
-  	let currQ = document.querySelector(".currQ");
-  	
-  	currQ.classList.remove('hide_it');
-  	ROOT_PINS.classList.add('hide_it');
+	const currentVar = clickedAnswer.id;
+	let clicked_pin = document.querySelector(".i_was_clicked");
+	let currQ = document.querySelector(".currQ");
 
-  	if (currentVar === 'True') {
-  		clicked_pin.remove();
-  		console.log(currentVar);
-  	/* add score */
-  		if (clickedAnswer.classList.contains('technical')) {  			ScoreTech();  	
+
+	const questionData = {
+        question: currQ,
+        category: clickedAnswer.classList[0],
+        value: currentVar
+    };
+    gameSessionData.questions.push(questionData);
+
+
+	
+	currQ.classList.remove('hide_it');
+	ROOT_PINS.classList.add('hide_it');
+
+	if (currentVar === 'True') {
+		clicked_pin.remove();
+		console.log(currentVar);
+	/* add score */
+		if (clickedAnswer.classList.contains('technical')) {
+			ScoreTech();  	
 		} 
 		else if (clickedAnswer.classList.contains('general')) {
 			ScoreGeneral();
-		}
+	}
 
-		isAlredyWin();
+	isAlredyWin();
+
+	currQ.classList.add('hide_it');
+	currQ.classList.remove('currQ');
+	ROOT_RESULT.classList.remove('hide_it');
+	ROOT_YES.classList.remove('hide_it');
+	ROOT_NO.classList.add('hide_it');
+
+} 
+else if (currentVar === 'False') {
+		ScoreHeart();
+		isLoose();
 
 		currQ.classList.add('hide_it');
 		currQ.classList.remove('currQ');
 		ROOT_RESULT.classList.remove('hide_it');
-		ROOT_YES.classList.remove('hide_it');
-  		ROOT_NO.classList.add('hide_it');
-
-
-	} 
-	else if (currentVar === 'False') {
-  		ScoreHeart();
-  		isLoose();
-  			console.log(currentVar);
-
-  		currQ.classList.add('hide_it');
-  		currQ.classList.remove('currQ');
-		ROOT_RESULT.classList.remove('hide_it');
-  		ROOT_NO.classList.remove('hide_it');
+		ROOT_NO.classList.remove('hide_it');
 		ROOT_YES.classList.add('hide_it');
 
-  	} else {
-		console.log('check your life!');
+	} else {
+	console.log('check your life!');
 	}	
-
 }
+
+
+
+window.addEventListener('beforeunload', function() {
+    // Send the gameSessionData to Django view using AJAX before the page is closed or reloaded
+    fetch('/save_game_session_data/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(gameSessionData)
+    });
+});

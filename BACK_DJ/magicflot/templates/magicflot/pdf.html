@@ -11,23 +11,20 @@
     <style media="all" type="text/css">
 
       body {
+        margin: 0;
+        padding: 0;
         color: #5E5B5B;
         font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: 400;
         font-style: normal;
-        margin: 0;
-        padding: 3em;
-      }
 
-
-      h2, h3, h4 {
-        color: #5E5B5B;
+        /*background-image: url("{{ back_sert_url }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;*/
       }
       h1{
         color: #5E5B5B;
-        /* background: -webkit-linear-gradient(30deg, rgba(20, 16, 49), rgba(49,62,79), rgba(218,155,81), rgba(138,93,41));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;*/
         font-size: 3em;
         font-weight: 550;
       }
@@ -67,71 +64,87 @@
         margin-right: auto;
       }
       .logo{
-        max-width: 10em;
+        width: 250px;
+      }
+      .stamp{
+        width: 250px;
       }
       hr{
         color: #5E5B5B;
       }
+      .wrapper{
+
+      }
+      .winner_content{
+        padding: 3em;
+        z-index: 5!important;
+      }
+      .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+    }
     </style>
 </head>
 
 <body>
-
-<div class=''>
-
-  <table class='no_border'>
-    <thead></thead>
-    <tbody>
-      <tr>
-        <td class='left no_border'>
-          <img class='logo' src='{{ logo_url }}'>
-        </td>
-        
-        <td class='right no_border'>
-          <p>Сертификат победителя № {{ winner.id }}</p>
-          {% load tz %}
-          {% get_current_timezone as TIME_ZONE %}
-          {% timezone "Etc/GMT-3" %}
-          <p>{{ winner.create|date:"d M, Y | H:i:s" }}</p>
-          {% endtimezone %}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <br> <br>
-
-  <center> 
+<img class="background-image" src="{{ back_sert_url }}" />
+<div class='wrapper'>
   
-    <h1>ПОБЕДИТЕЛЬ</h1>
-    <h2>{{ winner.first_name }} {{ winner.last_name }}</h2>
+  <div class='winner_content'>
+    <table class='no_border'>
+      <thead></thead>
+      <tbody>
+        <tr>
+          <td class='left no_border'>
+            <img class='logo' src='{{ logo_url }}'>
+          </td>
+          
+          <td class='right no_border'>
+            <p>Сертификат победителя № {{ winner.id }}</p>
+            {% load tz %}
+            {% get_current_timezone as TIME_ZONE %}
+            {% timezone "Etc/GMT-3" %}
+            <p>{{ winner.create|date:"d M, Y | H:i:s" }}</p>
+            {% endtimezone %}
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p class='winner_about'>
-  Идущий в будущее верным курсом на борту корабля знаний № {{ winner.school }} в составе экипажа {{ winner.the_class }}.
-    </p>
+    <br>
 
-  </center> 
+    <center> 
+    
+      <h1>ПОБЕДИТЕЛЬ</h1>
+      <h2>{{ winner.first_name }} {{ winner.last_name }}</h2>
 
-  <br>  <br>
-  <table class='no_border'>
-    <thead></thead>
-    <tbody>
-      <tr>
-        <td class='padding_l2 left no_border'>
-          <p>Главный Магистрат</p>
-          <p>Города Волшебных Кораблей</p>
-        </td>
-        <td class='no_border'></td>
-        <td class='no_border'></td>
-        <td class='no_border'></td>
-        <td class='no_border center'>
-          <p>
-          <strong>МЕСТО ДЛЯ ПЕЧАТИ</strong>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+      <p class='winner_about'>
+    Идущий в будущее верным курсом на борту корабля знаний № {{ winner.school }} в составе экипажа {{ winner.the_class }}.
+      </p>
+    </center> 
 
+    <br><br>
+
+    <table class='no_border'>
+      <thead></thead>
+      <tbody>
+        <tr>
+          <td class='padding_l2 left no_border'>
+            <p class='winner_about'>Главный Магистрат</p>
+            <p class='winner_about'>Города Волшебных Кораблей</p>
+          </td>
+          
+          <td class='no_border center'>
+             <img class='stamp' src='{{ stamp_url }}'>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 </body>

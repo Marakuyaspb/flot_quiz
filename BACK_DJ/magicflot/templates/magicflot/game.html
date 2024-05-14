@@ -60,15 +60,18 @@
 						<div id='{{ question.id }}' class='the_question  hide_it'>
 							<div id='questions_details'>
 								<h5 id="{{ question.id }}" class="mb-4 mx-2">{{ question.question }}</h5>
-							</div>
+							
+								<div id='add_answers' class=''>
 
-							<div id='add_answers'>
-								<center>
-								  	<button id='{{ question.value_1 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_1 }}</button>
+								  	<button id='{{ question.value_1 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);' >{{ question.answer_1 }}</button>
+
 								  	<button id='{{ question.value_2 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_2 }}</button>
+
 								  	<button id='{{ question.value_3 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_3 }}</button>
+
 								  	<button id='{{ question.value_4 }}' class='{{ question.category }} answer_btn mb-3 mx-2' onclick='checkResult(event);'>{{ question.answer_4 }}</button>
-								  </center>
+
+								</div>
 							</div>
 						</div>
 

@@ -3,20 +3,25 @@
 
 {% block content %}
 
-<div id='gallery' class ='container'>
 
+<div class='px-2'>
+	<div id='gallery' class ='mt-5 container'>
+		
+		<h1 class ='ps-4 mt-2'>ГАЛЕРЕЯ ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
+		<p class='ps-4 pt-4 mb-5'>На нашей виртуальной выставке представлены работы юных художников Зеленодольска, Кронштадта и Казани.</p>
 
-	<h1 class ='mt-5'>ГАЛЕРЕЯ ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
-	<p class='my-5'>На нашей виртуальной выставке представлены работы юных художников Зеленодольска и Кронштадта.</p>
+		<center>
+		<div class="row">
+			<a class='col-md gradient_bg_blue py-5 m-1' href='{% url "gallery_history" %}' class=''>
+				<div><h3 class ='my-3'>Парусные корабли ⟶</h3></div>
+			</a>
+			<a class='col-md gradient_bg_blue py-5 m-1' href='{% url "gallery_modern" %}' >
+				<div><h3 class ='my-3'>Современные корабли ⟶</h3></div>
+			</a>
+		</div>
+		</center>
 
-	<div class="row py-5">
-		<div class='col-md glass mx-5'><h3>Исторические корабли</h3></div>
-		<div class='col-md glass mx-5'><h3>Современные корабли</h3></div>
-		<div class='col-md glass mx-5'><h3>Портреты моряков</h3></div>
 	</div>
-
-	
-
 </div>
 
 {% endblock %}
