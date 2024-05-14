@@ -1,4 +1,7 @@
 import random
+from xhtml2pdf import pisa
+import matplotlib.pyplot as plt
+import os
 from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
@@ -6,8 +9,7 @@ from django.template.loader import get_template
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from xhtml2pdf import pisa
-from .models import Question, Category, Winner
+from .models import Category, Question, Statistic, Winner
 from .forms import WinnerForm
 
 
@@ -20,7 +22,12 @@ def about(request):
 
 def gallery(request):
 	return render(request, 'magicflot/gallery.html')
-
+def gallery_history(request):
+	return render(request, 'magicflot/gallery_history.html')
+def gallery_modern(request):
+	return render(request, 'magicflot/gallery_modern.html')
+def gallery_portraits(request):
+	return render(request, 'magicflot/gallery_portraits.html')
 
 # GAME
 def display_question_details(request, question_id):
@@ -68,14 +75,26 @@ def download_pdf(request, pk):
 
 
 
-@csrf_exempt
-def save_quiz_interaction(request):
-	if request.method == 'POST':
-		data = json.loads(request.body)
-		
-		# Save the data to a JSON file
-		with open('quiz_interactions.json', 'a') as file:
-			json.dump(data, file)
-			file.write('\n')
-	
-		return JsonResponse({'message': 'Quiz interaction saved successfully.'})
+# CREATE SOME STATISTIC
+
+def statistic_view(request):
+	questions = Question.objects.all()
+	stats = []
+	for question in questions:
+		total_answers = Statistic.objects.filter(question=question).count()
+		true_answers = Statistic.objects.filter(question=question, is_true_answer=True).count()
+		stats.append({'question': question, 'total_answers': total_answers, 'true_answers': true_answers})
+
+	# Create a pie chart
+	labels = [f"{stat['question'].question} - {stat['true_answers']}/{stat['total_answers']}" for stat in stats]
+	sizes = [stat['true_answers'] for stat in stats]
+	colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+
+	plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+	plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
+
+	# Save the pie chart as a PNG image
+	image_path = os.path.join('media', 'pie_chart.png')
+	plt.savefig(image_path)
+
+	return render(request, 'statistic.html', {'stats': stats, 'image_path': image_path})

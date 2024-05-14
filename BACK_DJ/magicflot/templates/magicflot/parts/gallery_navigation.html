@@ -1,0 +1,16 @@
+<style>
+	.g_menu_link{
+		font-size: 1em!important;
+		line-height: 1.1em;
+	}
+	.sea {color:#224d51;}
+</style>
+
+
+<div class="container-fluid">
+	<div class="d-flex justify-content-start my-3 sea">
+		<a href='{% url "gallery_history" %}' class='mx-2'><p class='sea g_menu_link'>Исторические корабли</p></a> ~
+		<a href='{% url "gallery_modern" %}' class='mx-2'><p class='sea g_menu_link'>Современные корабли</p></a> ~ 
+		<a href='{% url "gallery_portraits" %}' class='mx-2'><p class='sea g_menu_link'>Портреты моряков</p></a>
+	</div>
+</div>

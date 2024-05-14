@@ -44,6 +44,13 @@ class Question(models.Model):
 		return self.question
 
 
+class Statistic(models.Model):
+	play_session_id = models.AutoField(primary_key=True)
+	play_session_time = models.DateTimeField(auto_now_add=True)
+	question = models.ForeignKey(Question, on_delete=models.CASCADE)
+	is_true_answer = models.BooleanField()
+
+
 
 # WINNERS
 
