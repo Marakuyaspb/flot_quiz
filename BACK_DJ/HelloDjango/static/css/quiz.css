@@ -55,3 +55,57 @@
 	padding: 1.5em;
 	height: 4.5em;
 }
+
+
+
+
+@keyframes slide_top_h {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-901px);
+  }
+}
+
+.frame {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+}
+
+.roll_h {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 901px;
+    background: transparent url(https://городволшебныхкораблей.рф/static/icons/a_history.png) no-repeat top center;
+	background-size: 70px 901px;
+  animation:  slide_top_h 2s steps(13, end) infinite both;
+}
+
+
+@keyframes slide_top_t {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-490px);
+  }
+}
+
+
+.roll_t {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 490px;
+    background: transparent url(https://городволшебныхкораблей.рф/static/icons/a_tech.png) no-repeat top center;
+	background-size: 70px 490px;
+  animation:  slide_top_t 2.4s steps(7, end) infinite both;
+}

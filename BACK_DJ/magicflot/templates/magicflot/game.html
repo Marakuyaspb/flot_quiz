@@ -3,6 +3,14 @@
 
 {% block content %}
 
+<style>
+
+
+</style>
+
+
+
+
 <section id='' class ='wrap_magic'>
 	<div class='wrap_magic d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 		<img class ='header_magic' src = '{% static "img/game_magic.png" %}'>
@@ -12,7 +20,7 @@
 	</div>
 
 	<center>
-		<div id='game' class ='glass m-2 white_milk'>
+		<div id='game' class ='hide_it glass m-2 white_milk'>
 
 			<center>
 				<div class='d-flex justify-content-between glass_score mb-3 py-1'>
@@ -48,7 +56,12 @@
 						<div id='questions_all'>
 							{% for question in questions %}
 
-							<img id='{{ question.id }}' class='q_pin {{ question.category.category }}' src='/static/{{ question.icon }}' onclick="showDetails(event);">
+							<!-- img id='{{ question.id }}' class='q_pin add_animation {{ question.category.category }}' src='/static/{{ question.icon }}' onclick="showDetails(event);"-->
+
+							<div class='frame'>
+								<div id='{{ question.id }}' class='q_pin add_animation {{ question.category.category }}' onclick="showDetails(event);"></div>
+							</div>
+
 							{% endfor %}	
 						</div>
 					</div>
@@ -139,13 +152,15 @@
 			</div>
 			</center>
 		</div>
+		<div id='btn_start' class='mt-10 up_z btn_magic black' onclick='startGame(event);'>НАЧАТЬ ИГРУ</div>
 	</center>
 
 </section>
 
-<!-- <script src='{% static "js/score.js" %}'></script>	
-<script src='{% static "js/generate_q.js" %}'></script>
-<script src='{% static "js/game.js" %}'></script>
- -->
+
+<script src='{% static "js/root.js" %}'></script>	
+<script src='{% static "js/animation_pins.js" %}'></script>	
+<script src='{% static "js/score.js" %}'></script>  
+<script src='{% static "js/the_game.js" %}'></script>
 
 {% endblock %}

@@ -1,16 +1,15 @@
-const ROOT_PINS = document.getElementById('questions_all');
-const ROOT_RESULT = document.getElementById('result');
-const ROOT_QUESTIONS = document.getElementById('questions');
-const ROOT_NO = document.getElementById('no');
-const ROOT_YES = document.getElementById('yes');
-const ROOT_LOOSE = document.getElementById('loose');
-const ROOT_WIN = document.getElementById('win');
-
 let gameSessionData = {
     session_id: 'unique_session_id', 
     timezone: new Date().getTimezoneOffset(),
     questions: []
 };
+
+
+function startGame(event){
+	ROOT_GAME.classList.remove('hide_it');
+	ROOT_START.classList.add('hide_it');
+}
+
 
 function showDetails(event){
 	let clicked_el = event.target;
