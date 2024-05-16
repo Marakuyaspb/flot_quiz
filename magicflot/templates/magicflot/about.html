@@ -1,0 +1,104 @@
+{% extends 'magicflot/base.html' %}
+{% load static %}
+
+{% block content %}
+<style type="text/css">
+	.h6em {	max-height: 6em; }
+</style>
+
+<div id='' class ='container'>
+	<h1 class ='my-5'>О ПРОЕКТЕ</h1>
+
+	<div class="row my-5">
+		<div class='col-md-3'>
+			<img class='h6em' src='{% static "img/logos/president.png" %}'>
+		</div>
+
+		<div class='col-md-9'>
+			<p class='ps-4 pt-3'>Проект реализован при поддержке <a href='https://фондкультурныхинициатив.рф/'> Президентского фонда культурных иницицатив</a> </p>
+		</div>
+	</div>
+	
+	<h3 class='pt-3 my-5'>Партнеры проекта</h3>
+
+
+	<div class="row my-5">
+		<div class='col-md-6'>
+			<div class="d-flex justify-content-start my-2">
+				<div>
+					<img class='h6em' src='{% static "img/logos/gerb_zelenod.png" %}'>
+				</div>
+				<div><p class='ps-4 pt-3'>Зеленодольск</div>
+			</div>
+		</div>
+		<div class='col-md-6'>
+			<div class="d-flex justify-content-start my-2">
+				<div>
+					<img class='h6em' src='{% static "img/logos/gerb_kron.png" %}'>
+				</div>
+				<div><p class='ps-4 pt-3'>Кронштадт</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row my-5">
+		<div class='col-md-3'>
+			<img class='h6em' src='{% static "img/logos/krosht_morskoy_zavod.png" %}'>
+		</div>
+		<div class='col-md-9'> <p class='ps-4 pt-3'>АО "Кронштадтский морской завод"</div>
+	</div>
+
+	<div class="row my-5">
+		<div  class='col-md-3'>
+			<img class='h6em' src='{% static "img/logos/zig.png" %}'>
+		</div>
+		<div  class='col-md-9'><p class='ps-4 pt-3'>АО "Зеленодольский завод им. А.И. Горького"</div>
+	</div>
+
+	<div class="row my-5">
+		<div class='col-md-6'>
+			<div class="d-flex justify-content-start my-2">
+				<div>
+					<img class='h6em' src='{% static "img/logos/kron_museum.jpg" %}'>
+				</div>
+				<div><p class='ps-4 pt-3'>Музей истории Кронштадта</div>
+			</div>
+		</div>
+		<div class='col-md-6'>
+			<div class="d-flex justify-content-start my-2">
+				<div>
+					<img class='h6em' src='{% static "img/logos/gallery.jpg" %}'>
+				</div>
+				<div><p class='ps-4 pt-3'>Художественная галерея</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row my-5">
+		<div class='col-md-6'>
+			<div class="d-flex justify-content-start my-2">
+				<div>
+					<img class='h6em' src='{% static "img/logos/ull.png" %}'>
+				</div>
+				<div><p class='ps-4 pt-3'>ЮЛА</div>
+			</div>
+		</div>
+		<div class='col-md-6'>
+			<div class="d-flex justify-content-start my-2">
+				<div>
+					<img class='h6em' src='{% static "img/logos/kron_logo_gold.png" %}'>
+				</div>
+				<div><p class='ps-4 pt-3'>Детская художественная школа им М.К. Аникушина</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+
+
+</div>
+
+{% endblock %}

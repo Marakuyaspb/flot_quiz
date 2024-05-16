@@ -1,0 +1,361 @@
+{% extends 'magicflot/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'gallery/parts/gallery_navigation.html' %}
+<div class="container">
+
+	<h2 class ='ps-2 mt-4'>КОРАБЛИ XX И XXI ВЕКОВ</h2>
+
+	<hr>
+	<div class='d-flex justify-content-center'>
+		<a class="m-1" aria-current="page" href="#all">
+	    	<h5 class="sea">Художники всех возрастов ·</h5>
+	    </a>
+	    <a class="m-1" aria-current="page" href="#chidren">
+	    	<h5 class="sea">Работы самых юных художников ·</h5>
+	    </a>
+	    <a class="m-1" aria-current="page" href="#adult">
+	    	<h5 class="sea">Работы художников постарше</h5>
+	    </a>
+	</div>
+
+	<div id='all' class='mt-5'>
+		<div id="carouselExampleIndicators_v" class="carousel slide" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+
+		    <div class="carousel-item active">
+		    	<div class='row'>
+		    		<div class='col-md-6'>
+					    <img src='{% static "img/gallery/modern/vertical/Сиразетдинова.jpg" %}' class="my-1 d-block w-100" alt="...">
+					    <div class="carousel-caption d-none d-md-block">
+					        <h5>Сиразетдинова Софья "Путешествие на корабле" МБУ ХГ</h5>
+			      		</div>
+			      	</div>
+			      	<div class='col-md-6'>
+			      		<img src='{% static "img/gallery/modern/vertical/Куликова.jpg" %}' class="my-1 d-block w-100" alt="...">
+					    <div class="carousel-caption d-none d-md-block">
+					        <h5>Куликова Асель "Зелёный Дол 651" Лицей 14</h5>
+			      		</div>
+		      		</div>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		    	<div class='row'>
+		    		<div class='col-md-6'>
+			      		<img src='{% static "img/gallery/modern/vertical/IMG_20240223_124124.jpg" %}' class="my-1 d-block w-100" alt="...">
+		      		</div>
+		    		<div class='col-md-6'>
+					    <img src='{% static "img/gallery/modern/vertical/IMG_20240223_125155.jpg" %}' class="my-1 d-block w-100" alt="...">
+			      	</div>
+	      		</div>
+		    </div>
+
+		    <div class="carousel-item">
+		    	<div class='row'>
+		    		<div class='col-md-6'>
+					    <img src='{% static "img/gallery/modern/vertical/IMG_20240229_111932.jpg" %}' class="my-1 d-block w-100" alt="..."> 
+			      	</div>
+			      	<div class='col-md-6'>
+			      		<img src='{% static "img/gallery/modern/vertical/IMG_20240229_111916.jpg" %}' class="my-1 d-block w-100" alt="...">
+		      		</div>
+	      		</div>
+		    </div>
+
+		    <div class="carousel-item">
+		    	<div class='row'>
+		    		<div class='col-md-6'>
+					    <img src='{% static "img/gallery/modern/vertical/IMG_20240229_111156.jpg" %}' class="my-1 d-block w-100" alt="...">
+			      	</div>
+			      	<div class='col-md-6'>
+			      		<img src='{% static "img/gallery/modern/vertical/IMG_20240229_111140.jpg" %}' class="my-1 d-block w-100" alt="...">
+		      		</div>
+	      		</div>
+		    </div>
+
+		    
+
+		  </div>
+
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_v" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators_v" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+	</div>
+
+	<div id='chidren' class='mt-5'>
+		<h3 class='py-3'>Работы юных художников</h3>
+
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+
+		  	<div class="carousel-item active">
+		      <img src='{% static "img/gallery/modern/child/Шайхутдинова.jpg" %}' class="d-block w-100" alt="...">
+			    <div class="carousel-caption d-none d-md-block">
+			        <h5>Эмилия Шайхутдинова. "В море плывут корабли". студия МБУ "ХГ"</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/Гилманов.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Гилманов Карим. "Полный вперёд". Художественная галерея</h5>
+	      		</div>
+		    </div>
+
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240229_113458.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240229_113311.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240229_113233.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240223_125221.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240223_125021.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240215_122051.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		  </div>
+
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+	</div>
+
+
+
+	<div id='adult' class='mt-5'>
+		<h3 class='py-3'>Работы художников постарше</h3>
+
+		<div id="carouselExampleIndicators_a" class="carousel slide" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+
+		    
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Бутусова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Бутусова Полина "А в синем море"</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Гайсина.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Гайсина Полина, Аль-Дмеири Софья. " Этапы рождения корабля. ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Гарифуллина.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Гарифуллина Лилия. "Морской патруль".</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Герасимов.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Герасимов Кирилл. "Малый ракетный корабль "Буян-М". Лицей 14</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Еремеева.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Еремеева Любовь. "Встреча в порту". ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Зарипова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Зарипова Кира "Малый корабль. "Зелёный Дол 602". Лицей 14</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Зюзин.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Зюзин Кирилл "Малый ракетный корабль. "Проект 22800". Лицей14</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Казинникова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Казинникова Елизавета. "На реке Волге". ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Коллективная_пароход.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Коллективная работа. Пароход, пароход, куда хочешь отвезет. МБУ ДО Зеленодольская художественная школа</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Коллективная.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Коллективная работа учащихся МБУ ДО Зеленодольской художественной школы</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Мингазов.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Мингазов Тимур. "699". Лицей №14</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Надирова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Надирова София "Береговая охрана на страже мирных городов" ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Рахматуллина.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Рахматуллина Ивелина "Подводная лодка" ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Самойлов.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Самойлов Кирилл "Сторожевой патрульный корабль "Василий Быков" Лицей 14</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Смыченко.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Смыченко Софья. "Максим Горький". Лицей 1</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Софьина.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Софьина Маргарита. "Романовский мост". ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Суховеркова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Суховеркова Ксения. "Праздничный салют". ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Сякаева.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Сякаева Сафия. "Пограничник"</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Тагирова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Тагирова Самира. "Спуск на воду". ДШ искусств Зеленодольска</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Терехин.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Терехин Никита. "Мечты о будущем". ДХШ Альменова</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Титова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Титова Дарья. "В добрый путь!". ЗДХШ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Толстова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Толстова Карина. "Будущие речники". ДХШ Альменова</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Трошина.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Трошина Дарья. "691". ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Ушакова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Ушакова Лиза. "В путь"</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Хайруллина.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Хайруллина Диана. "Фрегат "Гепард - 3.9". Лицей 14</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Халиева.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Халиева Рената "Несусь по волнам"</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Худякова.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Худякова Глафира. "Наше будущее под охраной". ДШИ</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Шарафиева.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Шарафиева Амелия</h5>
+	      		</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/Шарафутдинов.jpg" %}' class="d-block w-100" alt="...">
+		      <div class="carousel-caption d-none d-md-block">
+			        <h5>Шарафутдинов Данияр. "Мой корабль". Гимназия №3</h5>
+	      		</div>
+		    </div>
+
+		    <div class="carousel-item active">
+		      <img src='{% static "img/gallery/modern/IMG_20240223_124400.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/IMG_20240223_12444.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/IMG_20240229_110920.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/child/IMG_20240229_110517.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/IMG_20240229_110536.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src='{% static "img/gallery/modern/IMG_20240229_110950.jpg" %}' class="d-block w-100" alt="...">
+		    </div>
+
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_a" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators_a" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+
+	</div>
+
+
+</div>
+
+{% endblock %}

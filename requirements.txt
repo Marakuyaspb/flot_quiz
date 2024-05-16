@@ -1,0 +1,2 @@
+matplotlib
+xhtml2pdf
