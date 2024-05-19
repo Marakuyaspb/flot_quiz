@@ -8,8 +8,9 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 
 import os
+from django.urls import reverse
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import get_template
 
 from .models import Category, Question, Statistic, Winner
@@ -34,18 +35,6 @@ def display_question_details(request, question_id):
 	question = Question.objects.get(id=question_id)
 	return render(request, 'question_details.html', {'question': question})
 
-# def game(request):
-# 	general_questions = Question.objects.filter(category__category='general').order_by('?')[:8]
-# 	technical_questions = Question.objects.filter(category__category='technical').order_by('?')[:7]
-# 	questions = list(general_questions) + list(technical_questions)
-# 	random.shuffle(questions)
-# 	selected_questions = random.sample(questions, 15)
-
-# 	context = {
-# 		'questions': selected_questions
-# 	}
-# 	return render(request, 'magicflot/game.html', context)
-
 
 def game(request):
 	general_questions = Question.objects.filter(category__category='general').order_by('?')[:8]
@@ -69,6 +58,8 @@ def game(request):
 
 
 # PDF
+
+
 def get_win_sert(request):
 	if request.method == 'POST':
 		winner_form = WinnerForm(request.POST)
@@ -95,8 +86,9 @@ def download_pdf(request, pk):
 	html = template.render(context)
 	pisa_status = pisa.CreatePDF(html, dest=response)
 	if pisa_status.err:
-		return HttpResponse('Имеют место технические неполадки <pre>' + html + '</pre>')
+		return HttpResponse('<pre>' + html + '</pre>')
 	return response
+
 
 
 

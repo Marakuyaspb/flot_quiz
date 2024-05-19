@@ -2,3 +2,6 @@ way.txt
 
 static/icons/*
 static/img/*
+
+gallery/templates/gallery/gallery_history.html
+gallery/templates/gallery/gallery_modern.html

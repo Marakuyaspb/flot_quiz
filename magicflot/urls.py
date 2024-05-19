@@ -8,7 +8,6 @@ from django.urls import reverse
 
 app_name = 'magicflot'
 
-
 urlpatterns = [
     path('', views.index, name = 'index'),
     path('about/', views.about, name = 'about'),
