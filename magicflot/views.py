@@ -60,36 +60,60 @@ def game(request):
 # PDF
 
 
-def get_win_sert(request):
-	if request.method == 'POST':
-		winner_form = WinnerForm(request.POST)
-		if winner_form.is_valid():
-			winner = winner_form.save()
-			return redirect('download_pdf', pk=winner.pk)
-	else:
-		winner_form = WinnerForm()
-	return render(request, 'magicflot/get_win_sert.html', {'winner_form': winner_form})
-
-
 def download_pdf(request, pk):
 	winner = Winner.objects.get(pk=pk)
 	template_path = 'magicflot/pdf.html'
-	context = {
-		'winner': winner,
-		'logo_url': 'https://городволшебныхкораблей.рф/static/logo_blue.png',
-		'stamp_url': 'https://городволшебныхкораблей.рф/static/img/stamp.png',
-		'back_sert_url': quote('https://городволшебныхкораблей.рф/static/img/back_sert.png'),
-	}
+	context = {'winner': winner, 'logo_url': 'https://городволшебныхкораблей.рф/static/logo_blue.png'}
 	response = HttpResponse(content_type='application/pdf')
 	response['Content-Disposition'] = f'attachment; filename="certificate_{winner.last_name}_{winner.first_name}.pdf"'
 	template = get_template(template_path)
 	html = template.render(context)
 	pisa_status = pisa.CreatePDF(html, dest=response)
 	if pisa_status.err:
-		return HttpResponse('<pre>' + html + '</pre>')
+		return HttpResponse('Имеют место технические неполадки <pre>' + html + '</pre>')
 	return response
 
 
+def get_win_sert(request):
+	if request.method == 'POST':
+		winner_form = WinnerForm(request.POST)
+		if winner_form.is_valid():
+			winner = winner_form.save()
+			return redirect('magicflot:download_pdf', pk=winner.pk)
+	else:
+		winner_form = WinnerForm()
+	return render(request, 'magicflot/get_win_sert.html', {'winner_form': winner_form})
+
+
+# def get_win_sert(request):
+# 	if request.method == 'POST':
+# 		winner_form = WinnerForm(request.POST)
+# 		if winner_form.is_valid():
+# 			winner = winner_form.save()
+# 			return redirect('download_pdf', pk=winner.pk)
+# 	else:
+# 		winner_form = WinnerForm()
+# 	return render(request, 'magicflot/get_win_sert.html', {'winner_form': winner_form})
+
+
+
+# def download_pdf(request, pk):
+# 	winner = Winner.objects.get(pk=pk)
+# 	template_path = 'magicflot/pdf.html'
+# 	context = {
+# 		'winner': winner,
+# 		'logo_url': 'https://городволшебныхкораблей.рф/static/logo_blue.png',
+# 		'stamp_url': 'https://городволшебныхкораблей.рф/static/img/stamp.png',
+# 		'back_sert_url': quote('https://городволшебныхкораблей.рф/static/img/back_sert.png'),
+# 	}
+# 	response = HttpResponse(content_type='application/pdf')
+# 	response['Content-Disposition'] = f'attachment; filename="certificate_{winner.last_name}_{winner.first_name}.pdf"'
+# 	template = get_template(template_path)
+# 	html = template.render(context)
+# 	pisa_status = pisa.CreatePDF(html, dest=response)
+# 	if pisa_status.err:
+# 		return HttpResponse('<pre>' + html + '</pre>')
+# 	return response
 
 
 # CREATE SOME STATISTIC

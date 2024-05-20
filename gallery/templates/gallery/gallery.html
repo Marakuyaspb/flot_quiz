@@ -2,20 +2,25 @@
 {% load static %}
 
 {% block content %}
-
+<style type="text/css">
+	.big_btn{
+		border-radius: 20px;
+	}
+</style>
 
 <div class='px-2'>
 	<div id='gallery' class ='mt-5 container'>
 		
-		<h1 class ='ps-4 mt-2'>ГАЛЕРЕЯ ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
-		<p class='ps-4 pt-4 mb-5'>На нашей виртуальной выставке представлены работы юных художников Зеленодольска, Кронштадта и Казани.</p>
+		<h1 class ='ps-4 mt-2 white_milk'>ГАЛЕРЕЯ ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
+		
+		<p class='ps-4 py-5 white_milk'>На виртуальной выставке представлены творческие работы юных художников, выполненные по мотивам исторических событий морской славы России: начиная со строительства Петром Великим первых боевых кораблей и заканчивая современными мощными ракетными крейсерами и атомными подводными лодками.
 
 		<center>
-		<div class="row">
-			<a class='col-md gradient_bg_blue py-5 m-1' href='{% url "gallery:gallery_history" %}' class=''>
+		<div class="row px-2">
+			<a class='big_btn col-md gradient_bg_blue py-5 m-1' href='{% url "gallery:gallery_history" %}' class=''>
 				<div><h3 class ='my-3'>Парусные корабли ⟶</h3></div>
 			</a>
-			<a class='col-md gradient_bg_blue py-5 m-1' href='{% url "gallery:gallery_modern" %}' >
+			<a class='big_btn col-md gradient_bg_blue py-5 m-1' href='{% url "gallery:gallery_modern" %}' >
 				<div><h3 class ='my-3'>Современные корабли ⟶</h3></div>
 			</a>
 		</div>
