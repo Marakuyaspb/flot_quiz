@@ -3,18 +3,18 @@
 
 {% block content %}
 
+<style type="text/css">
+	body{
+	background-image: url("{% static 'img/game_magic.png' %}");
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+</style>
 
 <section id='stars' class ='wrap_magic'>
-	<div class='wrap_magic d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-		<img class ='header_magic' src = '{% static "img/game_magic.png" %}'>
-	</div>
-	<div class='wrap_magic d-block d-md-none'>
-		<img class ='header_magic' src = '{% static "img/vertical_1.png" %}'>
-	</div>
 
 	<center>
 		<div id='game' class ='hide_it glass m-2 white_milk'>
-
 			<center>
 				<div class='d-flex justify-content-between glass_score mb-3 py-1'>
 					
@@ -42,7 +42,6 @@
 
 
 			<div class='my-2'>
-
 				<div id=''>
 					<div class="questions_container pt-3">
 					
@@ -150,10 +149,13 @@
 			</div>
 			</center>
 		</div>
-		<div onclick='showGame(event);'><div id='btn_start' class='mt-10 up_z btn_magic black' onclick='startGame(event);'>НАЧАТЬ ИГРУ</div></div>
+
+		<div onclick='showGame(event);'><div id='btn_start' class='mt-10 up_z btn_magic' onclick='startGame(event);'>НАЧАТЬ ИГРУ</div></div>
+
 	</center>
 
 </section>
+
 
 <script src='{% static "js/glittering.js" %}'></script> 
 
