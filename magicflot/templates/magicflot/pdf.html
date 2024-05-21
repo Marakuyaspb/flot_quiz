@@ -17,15 +17,10 @@
         font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: 400;
         font-style: normal;
-
-        /*background-image: url("{{ back_sert_url }}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;*/
       }
       h1{
         color: #5E5B5B;
-        font-size: 3em;
+        font-size: 5em;
         font-weight: 550;
       }
       h2{
@@ -76,7 +71,7 @@
 
       }
       .winner_content{
-        padding: 3em;
+        padding: 2em;
         z-index: 5!important;
       }
       .background-image {
@@ -91,7 +86,7 @@
 </head>
 
 <body>
-<img class="background-image" src="{{ back_sert_url }}" />
+<!-- <img class="background-image" src="{{ logo_url }}" /> -->
 <div class='wrapper'>
   
   <div class='winner_content'>
@@ -100,11 +95,11 @@
       <tbody>
         <tr>
           <td class='left no_border'>
-            <img class='logo' src='{{ logo_url }}'>
+            <img class='' src='{{ partners_logos }}'>
           </td>
           
           <td class='right no_border'>
-            <p>Сертификат победителя № {{ winner.id }}</p>
+            <p>Сертификат участника № {{ winner.id }}</p>
             {% load tz %}
             {% get_current_timezone as TIME_ZONE %}
             {% timezone "Etc/GMT-3" %}
@@ -119,7 +114,8 @@
 
     <center> 
     
-      <h1>ПОБЕДИТЕЛЬ</h1>
+      <h1>СЕРТИФИКАТ</h1>
+      <p class='winner_about'>Награждается участник викторины по истории судостроения в России</p>
       <h2>{{ winner.first_name }} {{ winner.last_name }}</h2>
 
       <p class='winner_about'>
@@ -127,19 +123,21 @@
       </p>
     </center> 
 
-    <br><br>
+    <br><br><br><br>
 
     <table class='no_border'>
       <thead></thead>
       <tbody>
         <tr>
           <td class='padding_l2 left no_border'>
-            <p class='winner_about'>Главный Магистрат</p>
-            <p class='winner_about'>Города Волшебных Кораблей</p>
+            <p class='winner_about'>МБУ «Художественная галерея»
+            </p>
+            <p class='winner_about'>г. Зеленодольск </p>
+            <p class='winner_about'>Директор  Т.П. Садкова</p>
           </td>
           
           <td class='no_border center'>
-             <img class='stamp' src='{{ stamp_url }}'>
+             <img class='stamp' src='{{ stamp_official }}'>
           </td>
         </tr>
       </tbody>

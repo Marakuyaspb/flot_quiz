@@ -6,3 +6,5 @@ static/img/*
 gallery/templates/gallery/gallery_history.html
 gallery/templates/gallery/gallery_modern.html
 magicflot/templates/magicflot/about.html
+magicflot/static/img/*
+magicflot/static/icons/*

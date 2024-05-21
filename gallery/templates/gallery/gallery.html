@@ -8,7 +8,7 @@
 	}
 </style>
 
-<div class='px-2'>
+<div id='stars' class='px-2'>
 	<div id='gallery' class ='mt-5 container'>
 		
 		<h1 class ='ps-4 mt-2 white_milk'>ГАЛЕРЕЯ ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
@@ -16,7 +16,7 @@
 		<p class='ps-4 py-5 white_milk'>На виртуальной выставке представлены творческие работы юных художников, выполненные по мотивам исторических событий морской славы России: начиная со строительства Петром Великим первых боевых кораблей и заканчивая современными мощными ракетными крейсерами и атомными подводными лодками.
 
 		<center>
-		<div class="row px-2">
+		<div class="row px-2 pb-5 mb-5">
 			<a class='big_btn col-md gradient_bg_blue py-5 m-1' href='{% url "gallery:gallery_history" %}' class=''>
 				<div><h3 class ='my-3'>Парусные корабли ⟶</h3></div>
 			</a>
@@ -28,5 +28,7 @@
 
 	</div>
 </div>
+
+<script src='{% static "js/glittering.js" %}'></script> 
 
 {% endblock %}

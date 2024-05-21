@@ -2,30 +2,26 @@
 {% load static %}
 
 {% block content %}
+<style type="text/css">
+	body{
+	background-image: url("{% static 'img/index_magic.png' %}");
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+</style>
 
-<section id='main' class ='wrap_magic'>
-
-
-	<div class='wrap_magic d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-		<img class ='header_magic' src = '{% static "img/index_magic.png" %}'>
-	</div>
-	<div class='wrap_magic d-block d-md-none'>
-		<img class ='header_magic' src = '{% static "img/vertical_1.png" %}'>
-	</div>
+<section id='stars'>
 
 	<center class = 'upper_header_img'>
 		<h1 class ='up_z mt_header'>ГОРОД ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
 
-   
 		<a href="https://%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B2%D0%BE%D0%BB%D1%88%D0%B5%D0%B1%D0%BD%D1%8B%D1%85%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9.%D1%80%D1%84/game">
 			<div class='mt-5 up_z btn_magic'>ИГРАТЬ!</div>
-		</a>
-		
+		</a>	
 	</center>
 	
-
-	
-
 </section>
+
+<script src='{% static "js/glittering.js" %}'></script> 
 
 {% endblock %}
