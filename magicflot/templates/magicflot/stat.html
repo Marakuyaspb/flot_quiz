@@ -1,0 +1,19 @@
+{% extends 'magicflot/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class='container'>
+	<h1 class='my-4'>СТАТИСТИКА</h1>
+
+	{% for stat in stats %}
+
+		<strong>{{ stat.question }}</strong>
+		<p>На этот вопрос ответили {{ stat.total_answers }} раз</p>
+		<p>Верных ответов: {{ stat.true_answers }}</p>
+
+	{% endfor %}
+
+	<!-- Display the pie chart image -->
+	<img src="{{ image_path }}" alt="Pie Chart">
+</div>
+{% endblock %}

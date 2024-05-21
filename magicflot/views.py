@@ -1,13 +1,15 @@
+import os
 import random
 from xhtml2pdf import pisa
 import matplotlib.pyplot as plt
 from urllib.parse import quote
 
-from django.http import JsonResponse
 import json
-from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+from datetime import datetime
 
-import os
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
@@ -86,45 +88,24 @@ def get_win_sert(request):
 
 
 
+
+
 # CREATE SOME STATISTIC
 
-# def save_game_session(request):
-# 	if request.method == 'POST':
-# 		data = json.loads(request.body)
-# 		game_session_data = data.get('data')
-
-# 		# Save the game session data to a JSON file on the server
-# 		with open('game_sessions.json', 'a') as file:
-# 			file.write(game_session_data + '\n')
-
-# 		return JsonResponse({'message': 'Game session data saved successfully.'})
-
-# 	return JsonResponse({'error': 'Invalid request method.'})
 
 
+def save_game_session(request):
+	if request.method == 'POST':
+		try:
+			game_session_data = json.loads(request.body)
+			file_path = os.path.join(settings.BASE_DIR, 'static/json/game_sessions.json')
 
+			with open(file_path, 'a') as file:
+				json.dump(game_session_data, file)
+				file.write('\n')
 
-def statistic_view(request):
-	questions = Question.objects.all()
-	stats = []
-
-	for question in questions:
-		total_answers = Statistic.objects.filter(question=question).count()
-		true_answers = Statistic.objects.filter(question=question, is_true_answer=True).count()
-
-		if total_answers > 0:  # Check if total_answers is not zero
-			stats.append({'question': question, 'total_answers': total_answers, 'true_answers': true_answers})
-
-	# Create a pie chart
-	labels = [f"{stat['question'].question} - {stat['true_answers']}/{stat['total_answers']}" for stat in stats]
-	sizes = [stat['true_answers'] for stat in stats]
-	colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
-
-	plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
-	plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
-
-	# Save the pie chart as a PNG image
-	image_path = os.path.join('media', 'pie_chart.png')
-	plt.savefig(image_path)
-
-	return render(request, 'magicflot/statistic.html', {'stats': stats, 'image_path': image_path})
+			return JsonResponse({'message': 'Game session data saved successfully'})
+		except Exception as e:
+			return JsonResponse({'error': str(e)}, status=500)
+	else:
+		return JsonResponse({'error': 'Invalid request method'}, status=405)
