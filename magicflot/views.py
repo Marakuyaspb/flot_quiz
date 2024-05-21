@@ -101,7 +101,7 @@ def save_game_session(request):
 			file_path = os.path.join(settings.BASE_DIR, 'static/json/game_sessions.json')
 
 			with open(file_path, 'a') as file:
-				json.dump(game_session_data, file)
+				json.dump(',' + game_session_data, file)
 				file.write('\n')
 
 			return JsonResponse({'message': 'Game session data saved successfully'})

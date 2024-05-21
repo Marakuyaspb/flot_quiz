@@ -119,10 +119,11 @@ async function checkResult(event){
 
 
 	const full_category = event.target.className;
-	const category = full_category.charAt(0);	
-	const question = event.target.parentNode.innerText.trim();
-	const value = event.target.id;
+	const category = full_category.charAt(0);
 
+	const question = event.target.parentNode.classList.value;
+	const value = event.target.id;
+console.log(question);
 	const answeredQuestion = {
 	  question: question,
 	  category: category,
@@ -174,12 +175,5 @@ else if (currentVar === 'False') {
 	console.log('check your life!');
 	}	
 
-
-/*	try {
-		await saveGameSession();
-		} catch (error) {
-		console.error("Error saving game session data:", error);
-	}
-*/
 
 }
