@@ -15,4 +15,5 @@ urlpatterns = [
     path('get_win_sert/', views.get_win_sert, name='get_win_sert'),
     path('download_pdf/<int:pk>/', views.download_pdf, name='download_pdf'),
     path('save_game_session/', save_game_session, name='save_game_session'),
+    path('stat/', views.stat, name = 'stat'),
 ]

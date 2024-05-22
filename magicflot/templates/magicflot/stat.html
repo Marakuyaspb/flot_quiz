@@ -2,18 +2,11 @@
 {% load static %}
 
 {% block content %}
-<div class='container'>
+<div class='container white_milk'>
 	<h1 class='my-4'>СТАТИСТИКА</h1>
 
-	{% for stat in stats %}
+	<p>All number of game sessions: {{ game_sessions_count }}</p>
+	<img src="{{ image_path_category }}" alt="Pie Chart">
 
-		<strong>{{ stat.question }}</strong>
-		<p>На этот вопрос ответили {{ stat.total_answers }} раз</p>
-		<p>Верных ответов: {{ stat.true_answers }}</p>
-
-	{% endfor %}
-
-	<!-- Display the pie chart image -->
-	<img src="{{ image_path }}" alt="Pie Chart">
 </div>
 {% endblock %}

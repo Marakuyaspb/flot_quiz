@@ -1,7 +1,6 @@
 import os
 import random
 from xhtml2pdf import pisa
-import matplotlib.pyplot as plt
 from urllib.parse import quote
 
 import json
@@ -17,6 +16,7 @@ from django.template.loader import get_template
 
 from .models import Category, Question, Statistic, Winner
 from .forms import WinnerForm
+from .stat import get_statistics
 
 
 def error_404_view(request, exception):
@@ -101,7 +101,7 @@ def save_game_session(request):
 			file_path = os.path.join(settings.BASE_DIR, 'static/json/game_sessions.json')
 
 			with open(file_path, 'a') as file:
-				json.dump(',' + game_session_data, file)
+				json.dump(game_session_data, file)
 				file.write('\n')
 
 			return JsonResponse({'message': 'Game session data saved successfully'})
@@ -109,3 +109,10 @@ def save_game_session(request):
 			return JsonResponse({'error': str(e)}, status=500)
 	else:
 		return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+
+def stat(request):
+	game_sessions_count = get_statistics()
+	image_path_category = 'static/pie_chart.png'
+
+	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'image_path_category': image_path_category})
