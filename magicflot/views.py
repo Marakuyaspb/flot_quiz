@@ -114,5 +114,8 @@ def save_game_session(request):
 def stat(request):
 	game_sessions = load_game_sessions()
 	game_sessions_count, all_questions = get_statistics(game_sessions)
+
+	bar_chart_dir = os.path.join(settings.BASE_DIR, 'static/bars')
+	bars = [f for f in os.listdir(bar_chart_dir) if f.endswith('.png')]
 	
-	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'all_questions': all_questions})
+	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'all_questions': all_questions, 'bars': bars})

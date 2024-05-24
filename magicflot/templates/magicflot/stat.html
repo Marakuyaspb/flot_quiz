@@ -6,6 +6,15 @@
 	body{
 		background: rgb(48, 147, 128);
 	}
+	.all_bars_container{
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		width: 96%;
+	  	margin-left: auto;
+		margin-right: auto;
+	}
+
 @media (min-width: 1025px){
 	.h22em { max-height: 32em; }
 }
@@ -33,9 +42,15 @@
 		</div>
 
 
+		<div class='all_bars_container'>
+			{% for bar in bars %}
+				<img class='h22em' src="{% static 'bars/' %}{{ bar }}" alt='{{ bar }}'>
+			{% endfor %}
+		</div>
+
 	</div>
 </div>
-<br><br><br><br>
+<br><br><br><br><br>
 
 <script src='{% static "js/glittering.js" %}'></script> 
 
