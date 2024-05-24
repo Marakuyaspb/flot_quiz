@@ -48,11 +48,12 @@ def game(request):
 
 	if len(questions) < 15:
 		# Adjust the number of questions retrieved if needed
-		all_questions = Question.objects.all().order_by('?')[:15]
+		all_questions = Question.objects.exclude(id__in=[q.id for q in questions]).order_by('?')[:15 - len(questions)]
 		selected_questions = list(all_questions)
 	else:
 		random.shuffle(questions)
 		selected_questions = random.sample(questions, 15)
+
 
 	context = {
 		'questions': selected_questions
@@ -62,7 +63,6 @@ def game(request):
 
 
 # PDF
-
 
 def download_pdf(request, pk):
 	winner = Winner.objects.get(pk=pk)
@@ -108,7 +108,6 @@ def save_game_session(request):
 			return JsonResponse({'error': str(e)}, status=500)
 	else:
 		return JsonResponse({'error': 'Invalid request method'}, status=405)
-
 
 
 def stat(request):

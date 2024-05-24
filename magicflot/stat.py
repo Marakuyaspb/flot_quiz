@@ -54,7 +54,7 @@ def generate_pie_chart(game_sessions):
     plt.savefig(os.path.join(pie_chart_dir, 'g_t_pie_chart.png'), transparent=True)
     
 
-    labels = ['ВЕРНЫЕ', 'НЕПРАВИЛЬНЫЕ']
+    labels = ['ВЕРНЫЕ', 'НЕ ВЕРНЫЕ']
     sizes = [question_true_count, question_false_count]
     colors=['seagreen', 'crimson']
     plt.figure(figsize=(5, 5))
