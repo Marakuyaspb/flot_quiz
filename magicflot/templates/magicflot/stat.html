@@ -2,11 +2,54 @@
 {% load static %}
 
 {% block content %}
-<div class='container white_milk'>
-	<h1 class='my-4'>СТАТИСТИКА</h1>
+<style type="text/css">
+	body{
+		background: rgb(48, 147, 128);
+	}
+@media (min-width: 1025px){
+	.h22em { max-height: 32em; }
+}
+@media (min-width: 811px) and (max-width: 1024px){
+	.h22em { max-height: 22em; }
+}
 
-	<p>All number of game sessions: {{ game_sessions_count }}</p>
-	<img src="{{ image_path_category }}" alt="Pie Chart">
+@media (max-width: 810px){
+	.h22em { max-height: 18em; }
+}
+</style>
+<section id='stars'>
+	<div class='container'>
+		<h1 class='my-5'>Статистика</h1>
 
+		<div class='row'>
+			<div class='col-md-6'>
+				<h2>В викторине участвовали {{ game_sessions_count }} раз</h2>
+				<center><img class='h22em' src='{% static "pies/true_false_pie_chart.png" %}' alt="Pie Chart"></center>
+			</div>
+			<div class='col-md-6'>
+				<h2>Какая категория вопросов давалась игрокам легче?</h2>
+				<center><img class='h22em' src='{% static "pies/g_t_pie_chart.png" %}' alt="Pie Chart"></center>
+			</div>
+		</div>
+
+
+	</div>
 </div>
+<br><br><br><br>
+
+<script src='{% static "js/glittering.js" %}'></script> 
+
 {% endblock %}
+
+
+
+<!-- 
+	{% for stat in stats %}
+
+		<strong>{{ stat.question }}</strong>
+		<p>На этот вопрос ответили {{ stat.total_answers }} раз</p>
+		<p>Верных ответов: {{ stat.true_answers }}</p>
+
+	{% endfor %}
+
+	<img src="{{ image_path }}" alt="Pie Chart"> -->

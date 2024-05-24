@@ -16,7 +16,7 @@ from django.template.loader import get_template
 
 from .models import Category, Question, Statistic, Winner
 from .forms import WinnerForm
-from .stat import get_statistics
+from .stat import get_statistics, load_game_sessions
 
 
 def error_404_view(request, exception):
@@ -27,10 +27,12 @@ def error_500(request):
 
 def index(request):
 	return render(request, 'magicflot/index.html')
-
 def about(request):
 	return render(request, 'magicflot/about.html')
-
+def blog(request):
+	return render(request, 'magicflot/blog.html')
+def book(request):
+	return render(request, 'magicflot/book.html')
 
 # GAME
 def display_question_details(request, question_id):
@@ -89,10 +91,7 @@ def get_win_sert(request):
 
 
 
-
 # CREATE SOME STATISTIC
-
-
 
 def save_game_session(request):
 	if request.method == 'POST':
@@ -111,8 +110,9 @@ def save_game_session(request):
 		return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
-def stat(request):
-	game_sessions_count = get_statistics()
-	image_path_category = 'static/pie_chart.png'
 
-	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'image_path_category': image_path_category})
+def stat(request):
+	game_sessions = load_game_sessions()
+	game_sessions_count, all_questions = get_statistics(game_sessions)
+	
+	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'all_questions': all_questions})

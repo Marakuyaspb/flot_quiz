@@ -1,0 +1,65 @@
+{% extends 'magicflot/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+	body{
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+	.w22em { max-width: 22em; }
+	a { color: var(--gray_blue);  }
+</style>
+
+
+<section id='stars'>
+	<div class='container white_milk mb-5'>
+
+		<div class="row mt-4 glass">
+			<div class='col-md-6'><h1 class='mt-2'>СБОРНИК </h1>
+				<h1>'Город волшебных кораблей'</h1>
+			</div>
+			<div class='col-md-6'>
+				<center>
+					<a href="#">
+						<div class='mt-4 mb-2 up_z btn_magic'>СКАЧАТЬ СБОРНИК</div>
+					</a>
+				</center>
+			</div>
+
+			<p class='pt-4'>В сборник вошли работы юных художников Зеленодольска, Кронштадта и Казани, с которыми вы можете также познакомиться в <a href = '{% url "gallery:gallery" %}'>Галерее сайта</a> и серия очерков Т.Г. Васиной.</p>
+			
+		</div>
+		 		
+		
+
+		<h2 class='my-5'>Автор очерков сборника «Город волшебных кораблей»</h2>
+		<div class='row'>
+			<div class='col-md-8'>
+				
+				<h3>Татьяна Григорьевна Васина</h3>
+				<strong>
+					<p>Педагог, публицист, писатель
+				</strong>
+				<p>Родилась 26 июня 1959 года. Проживает в селе Бело-Безводное Зеленодольского района Татарстана.
+				<p>Преподавала историю и ОБЖ в Раифской школе, позднее вела	туристический кружок, далее в сферу интересов добавились экология и краеведение. С 2014 года доброволец поисково-спасательного отряда «Лиза.Алерт».
+			</div>
+			<div class='col-md-4 pb-4'>
+				<center>
+					<img class='w22em pt-3' src='{% static "img/people/Vasina.png" %}'>
+				</center>
+			</div>
+		</div>
+		
+		<p>Публикации Татьяны Григорьевны выходили в газетах «Зеленодольская Правда», «Наш Зелёный Дол», Елабужской газете «Исторические новости».
+		<p>В 2018 году в издательстве «Центрполиграф» вышла книга «ВПК СССР» — итог четырёхлетней работы автора. 
+		<p class='pb-5'>В 2024 году Татьяна Григорьевна написала очерки для сборника «Город волшебных кораблей».
+
+<br><br><br><br>
+	</div>
+</section>
+
+<script src='{% static "js/glittering.js" %}'></script> 
+
+{% endblock %}
