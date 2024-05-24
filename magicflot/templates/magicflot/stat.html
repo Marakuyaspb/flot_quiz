@@ -3,9 +3,6 @@
 
 {% block content %}
 <style type="text/css">
-	body{
-		background: rgb(48, 147, 128);
-	}
 	.all_bars_container{
 		display: grid;
 		grid-gap: 10px;
@@ -15,24 +12,24 @@
 		margin-right: auto;
 	}
 
-@media (min-width: 1025px){
-	.h22em { max-height: 32em; }
-}
-@media (min-width: 811px) and (max-width: 1024px){
-	.h22em { max-height: 22em; }
-}
+	@media (min-width: 1025px){
+		.h22em { max-height: 32em; }
+	}
+	@media (min-width: 811px) and (max-width: 1024px){
+		.h22em { max-height: 22em; }
+	}
 
-@media (max-width: 810px){
-	.h22em { max-height: 18em; }
-}
+	@media (max-width: 810px){
+		.h22em { max-height: 18em; }
+	}
 </style>
 <section id='stars'>
-	<div class='container'>
+	<div class='container white_milk'>
 		<h1 class='my-5'>Статистика</h1>
 
 		<div class='row'>
 			<div class='col-md-6'>
-				<h2>В викторине участвовали {{ game_sessions_count }} раз</h2>
+				<h2>С момента запуска на воду в викторине участвовали {{ game_sessions_count }} раз(а)</h2>
 				<center><img class='h22em' src='{% static "pies/true_false_pie_chart.png" %}' alt="Pie Chart"></center>
 			</div>
 			<div class='col-md-6'>
@@ -41,6 +38,13 @@
 			</div>
 		</div>
 
+		
+		<h2 class='pt-5'>7 самых простых вопросов</h2>
+		<center><img class='img-fluid' src='{% static "pies/most_easy_chart.png" %}' alt="Pie Chart"></center>
+	
+		<h2>7 самых сложных вопросов</h2>
+		<center><img class='img-fluid' src='{% static "pies/most_hard_chart.png" %}' alt="Pie Chart"></center>
+		
 
 		<div class='all_bars_container'>
 			{% for bar in bars %}

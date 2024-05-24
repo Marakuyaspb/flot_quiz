@@ -16,7 +16,7 @@ from django.template.loader import get_template
 
 from .models import Category, Question, Statistic, Winner
 from .forms import WinnerForm
-from .stat import get_statistics, load_game_sessions
+from .stat import get_statistics, load_game_sessions, generate_pie_chart, generate_easy, generate_hard, generate_bar
 
 
 def error_404_view(request, exception):
@@ -115,7 +115,14 @@ def stat(request):
 	game_sessions = load_game_sessions()
 	game_sessions_count, all_questions = get_statistics(game_sessions)
 
+	generate_pie_chart_result = generate_pie_chart(game_sessions)
+	generate_easy_result = generate_easy(game_sessions)
+	generate_hard_result = generate_hard(game_sessions)
+
+
+	# Display bars about each question
 	bar_chart_dir = os.path.join(settings.BASE_DIR, 'static/bars')
 	bars = [f for f in os.listdir(bar_chart_dir) if f.endswith('.png')]
 	
-	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'all_questions': all_questions, 'bars': bars})
+
+	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'all_questions': all_questions, 'bars': bars, 'generate_pie_chart_result':generate_pie_chart,'generate_easy_result':generate_easy,'generate_hard_result':generate_hard})
