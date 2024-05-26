@@ -6,7 +6,7 @@ from django.contrib.messages import constants as messages
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

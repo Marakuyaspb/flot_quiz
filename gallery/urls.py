@@ -11,4 +11,5 @@ urlpatterns = [
     path('gallery/', views.gallery, name = 'gallery'),
     path('gallery/gallery_history/', views.gallery_history, name = 'gallery_history'),
     path('gallery/gallery_modern/', views.gallery_modern, name = 'gallery_modern'),
+
 ]

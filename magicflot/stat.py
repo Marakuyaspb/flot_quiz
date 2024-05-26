@@ -9,7 +9,7 @@ from django.conf import settings
 
 
 def load_game_sessions():
-    data = 'static/json/game_sessions.json'
+    data = os.path.join(settings.BASE_DIR,'static/json/game_sessions.json')
     game_sessions = []
     with open(data, 'r') as file:
         for line in file:
