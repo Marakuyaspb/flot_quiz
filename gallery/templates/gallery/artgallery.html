@@ -9,6 +9,31 @@
       	font-size: 1.1em;
       }
 
+
+
+   @media (min-width: 811px){
+	.art_container {
+	  display: grid;
+	  grid-gap: 35px;
+	  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	  width: 96%;
+	  margin-left: auto;
+		margin-right: auto;
+	}
+}
+	/* PHONE */
+	@media (max-width: 810px) {
+		.art_container {
+		  display: grid;
+		  grid-gap: 25px;
+		  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+		  width: 96%;
+		  margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+
 	.thumb {
 		display: block;
 	 }
@@ -65,16 +90,19 @@
 			<form method="get">
 				<div class='row'>
 					<div class='col-md-4'>
-			    <input class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="Парусники">Show history</input>
-			    </div>
-			    <div class='col-md-4'><input class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="Современные">Show modern</input></div>
-			    	<div class='col-md-4'>
-			    <input class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="Показать все">Show all</input>
-			    </div></div>
+				    	<button class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="1">Парусники</button>
+				    </div>
+				    <div class='col-md-4'>
+				    	<button class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="2">Современные</button></div>
+				    <div class='col-md-4'>
+				    	<button class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="3">Показать всё</button>
+				    </div>
+				</div>
 			</form>
 
 		</center>
 
+		<div class='art_container py-5'>
 
 		{% for artwork in artworks %}
 		    <div class='modal_container' onclick='showModal(this);'>
@@ -88,9 +116,12 @@
 			</div>
 		{% endfor %}
 
+		</div>
+		<br><br><br><br><br>
+
 	</div>
 </div>
-<br><br><br><br><br>
+
 
 <script src='{% static "js/modal_w.js" %}'></script>
 <script src='{% static "js/glittering.js" %}'></script> 

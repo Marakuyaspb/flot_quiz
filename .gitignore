@@ -4,6 +4,7 @@ static/icons/*
 static/img/*
 static/pies/*
 static/bars/*
+media/*
 
 gallery/templates/gallery/gallery_history.html
 gallery/templates/gallery/gallery_modern.html

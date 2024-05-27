@@ -3,6 +3,8 @@
 
 {% block content %}
 
+
+
 {% include 'gallery/parts/gallery_navigation.html' %}
 
 <style>
@@ -51,11 +53,11 @@
 
 {% for artwork in artworks %}
 <div class='modal_container' onclick='showModal(this);'>
-    <img class='thumb' src='{% static "{{ artwork.trumb.url }}" %}'>
+    <img class='thumb' src='{{ artwork.trumb.url }}'>
     <div class='modal_full hide'>
         <span class="close" onclick="closeModal(this);">&times;</span>
         
-        <img class='full_img'  src='{% static "{{ artwork.img.url }}" %}'>
+        <img class='full_img'  src='{{ artwork.img.url }}'>
         <p>{{ artwork.description }}</p>
     </div>
 </div>

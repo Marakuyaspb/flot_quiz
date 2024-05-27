@@ -12,6 +12,8 @@ class ArtWorkCategory(models.Model):
 	def __str__(self):
 		return self.art_category
 
+
+
 class ArtWork(models.Model):
 	id = models.AutoField(primary_key=True)
 	art_category = models.ForeignKey(
