@@ -4,33 +4,83 @@
 {% block content %}
 <style>
 	.filter_ship {
-      	border: none;
-      	border-radius: 5px;
-      	font-size: 1.1em;
-      }
-
-
-
-   @media (min-width: 811px){
-	.art_container {
-	  display: grid;
-	  grid-gap: 35px;
-	  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-	  width: 96%;
-	  margin-left: auto;
-		margin-right: auto;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.2em;
+		margin: 5px;
+		width: 90%;
 	}
-}
+
+	.modal_full{
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.5)!important;
+     }
+
+     .annotation{
+     	background:linear-gradient(30deg, rgba(20, 16, 49, 0.9), rgb(5, 123, 123, 0.5), rgb(34, 77, 81, 0.9));
+		box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25);
+     }
+
+	@media (min-width: 811px){
+		.art_container {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			width: 96%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.full_img{
+			height: 90%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.the_artwork_img{
+			height: 90%;
+		}
+		.thumb{
+			width: 100%;
+		}
+
+	}
 	/* PHONE */
 	@media (max-width: 810px) {
 		.art_container {
-		  display: grid;
-		  grid-gap: 25px;
-		  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
-		  width: 96%;
-		  margin-left: auto;
+			display: grid;
+			grid-gap: 10px;
+			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+			width: 96%;
+			margin-left: auto;
 			margin-right: auto;
 		}
+
+		.full_img{
+			width: 20em;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.the_artwork_img{
+			width: 20em;
+		}
+
+		.thumb{
+			width: 90%;
+		}
+
 	}
 
 
@@ -45,25 +95,7 @@
     .block {
         display: block;      
       
-    .modal_full{
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-    	height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      
-    .full_img{
-        width: 20em;
-	    position: absolute;
-	    top: 50%;
-	    left: 50%;
-	    transform: translate(-50%, -50%);
-    }     
+
     .close {
         color: #fff;
         position: absolute;
@@ -74,12 +106,13 @@
         transition: 0.3s;
 		z-index: 2;
       }
-
-   	
+  	
 </style>
 
-<div id='stars' class='px-2'>
-	<div id='gallery' class ='mt-5 container'>
+<div id='stars' class=''></div>
+<div id='content'>
+
+	<div id='gallery' class ='mt-5 wrap_container px-2'>
 		
 		<h1 class ='ps-4 mt-2 white_milk'>ГАЛЕРЕЯ ВОЛШЕБНЫХ КОРАБЛЕЙ</h1>
 		
@@ -104,24 +137,51 @@
 
 		<div class='art_container py-5'>
 
-		{% for artwork in artworks %}
-		    <div class='modal_container' onclick='showModal(this);'>
-			    <img class='thumb' src='{{ artwork.trumb.url }}'>
-			    <div class='modal_full hide'>
-			        <span class="close" onclick="closeModal(this);">&times;</span>
-			        
-			        <img class='full_img'  src='{{ artwork.img.url }}'>
-			        <p>{{ artwork.description }}</p>
-			    </div>
-			</div>
-		{% endfor %}
+			{% for artwork in artworks %}
+			    <div class='modal_container' onclick='showModal(this);'>
+				    <img class='thumb' src='{{ artwork.trumb.url }}'>
+				    <div class='modal_full hide'>
+				        <span class="close" onclick="closeModal(this);">&times;</span>
+				        	
+
+				        <div class='full_img'>
+				        	<div class='row'>
+				        		<div class='col-md-9'>
+							        <img class='the_artwork_img pb-5'  src='{{ artwork.img.url }}'>
+							    </div>
+							    <div class='col-md-3'>
+							        <p class='white_milk p-4 annotation'>{{ artwork.description }}</p>
+							    </div>
+							</div>
+						</div>
+
+
+				    </div>
+				</div>
+			{% endfor %}
 
 		</div>
-		<br><br><br><br><br>
+		<br><br>
+
+		<center>
+
+			<form method="get">
+				<div class='row'>
+					<div class='col-md-4'>
+				    	<button class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="1">Парусники</button>
+				    </div>
+				    <div class='col-md-4'>
+				    	<button class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="2">Современные</button></div>
+				    <div class='col-md-4'>
+				    	<button class='filter_ship gradient_bg_blue white_milk px-5 py-2' type="submit" name="art_category" value="3">Показать всё</button>
+				    </div>
+				</div>
+			</form>
+
+		</center>
 
 	</div>
 </div>
-
 
 <script src='{% static "js/modal_w.js" %}'></script>
 <script src='{% static "js/glittering.js" %}'></script> 
