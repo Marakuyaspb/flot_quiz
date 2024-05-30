@@ -28,7 +28,9 @@ window.addEventListener('beforeunload', async (event) => {
   } catch (error) {
     console.error("Error saving game session data:", error);
   }
+
 });
+
 
 
 function showDetails(event){

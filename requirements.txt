@@ -1,3 +1,4 @@
+celery
 matplotlib
 python-dotenv
 WeasyPrint
