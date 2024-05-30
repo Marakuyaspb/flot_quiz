@@ -70,9 +70,9 @@
 {% endblock %}
 
 
-<footer class='gradient_bg fixed-bottom'>
-  
-  <div class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
+<footer class='gradient_bg fixed-bottom d-none d-md-block d-lg-block d-xl-block d-xxl-block'> 
+	
+  <div class=''>
 	  <div class="d-flex justify-content-center py-1">
 	    <a class="nav-link white_milk" href='{% url "magicflot:game" %}'>Игра</a>
 	    <a class="nav-link white_milk" href='{% url "gallery:gallery" %}'>Галерея</a>
@@ -83,7 +83,12 @@
 	  </div>
   </div>
 
-  <div class='d-block d-md-none'>
+</footer>
+
+
+<footer class='gradient_bg d-block d-md-none'>
+
+  <div class=''>
 			<div class="d-flex justify-content-center py-1">
 		    <a class="nav-link white_milk" href='{% url "magicflot:game" %}'>Игра</a>
 		    <a class="nav-link white_milk" href='{% url "gallery:artgallery" %}'>Галерея</a>
@@ -94,8 +99,8 @@
 				<a class="nav-link white_milk" href='{% url "magicflot:stat" %}'>Статистика</a>
 	    	<a class="nav-link white_milk" href='{% url "magicflot:about" %}'>О проекте</a>
 		    <a class="nav-link white_milk" href='{% url "magicflot:blog" %}'>Блог</a>
-
 		  </div>
+
 	</div>
 
 	<center>

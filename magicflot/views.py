@@ -117,11 +117,20 @@ def stat(request):
 	generate_pie_chart_result = generate_pie_chart(game_sessions)
 	generate_easy_result = generate_easy(game_sessions)
 	generate_hard_result = generate_hard(game_sessions)
-
+	generate_bar_result = generate_bar(game_sessions)
 
 	# Display bars about each question
 	bar_chart_dir = os.path.join(settings.BASE_DIR, 'static/bars')
 	bars = [f for f in os.listdir(bar_chart_dir) if f.endswith('.png')]
 	
+	context = {
+		'game_sessions_count': game_sessions_count, 
+		'all_questions': all_questions,
+		'bars': bars,
+		'generate_pie_chart_result':generate_pie_chart,
+		'generate_easy_result':generate_easy,
+		'generate_hard_result':generate_hard,
+		'generate_bar_result':generate_bar_result
+	}
 
-	return render(request, 'magicflot/stat.html', {'game_sessions_count': game_sessions_count, 'all_questions': all_questions, 'bars': bars, 'generate_pie_chart_result':generate_pie_chart,'generate_easy_result':generate_easy,'generate_hard_result':generate_hard})
+	return render(request, 'magicflot/stat.html', context)

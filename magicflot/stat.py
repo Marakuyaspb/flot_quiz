@@ -187,7 +187,7 @@ def generate_bar(game_sessions):
         false_values = data['False']
         x = range(len(labels))
 
-        wrapped_question = textwrap.fill(question, width=40)
+        wrapped_question = textwrap.fill(question, width=50)
 
         plt.figure()
         plt.bar(x, [true_values, false_values], color=['seagreen', 'crimson'])
