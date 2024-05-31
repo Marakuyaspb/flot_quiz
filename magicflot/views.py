@@ -1,18 +1,18 @@
 import os
 import random
-from xhtml2pdf import pisa
+import json
+from datetime import datetime
+from weasyprint import HTML
 from urllib.parse import quote
 
-import json
-from django.http import JsonResponse
-from datetime import datetime
 
 from django.conf import settings
+from django.http import Http404, HttpResponse, HttpResponseRedirect, JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.template.loader import get_template, render_to_string
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
-from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect, get_object_or_404
-from django.template.loader import get_template
+
 
 from .models import Category, Question, Statistic, Winner
 from .forms import WinnerForm
@@ -67,15 +67,20 @@ def game(request):
 def download_pdf(request, pk):
 	winner = Winner.objects.get(pk=pk)
 	template_path = 'magicflot/pdf.html'
-	context = {'winner': winner, 'logo_url': 'https://городволшебныхкораблей.рф/static/logo_blue.png', 'partners_logos': 'https://городволшебныхкораблей.рф/static/pdf/partners_logos.png', 'stamp_official': 'https://городволшебныхкораблей.рф/static/pdf/stamp_official.png', }
-	response = HttpResponse(content_type='application/pdf')
+
+	context = {
+		'winner': winner,
+	}
+
+	html_string = render_to_string(template_path, context)
+
+	pdf_file = HTML(string=html_string, base_url=request.build_absolute_uri()).write_pdf()
+
+	response = HttpResponse(pdf_file, content_type='application/pdf')
 	response['Content-Disposition'] = f'attachment; filename="certificate_{winner.last_name}_{winner.first_name}.pdf"'
-	template = get_template(template_path)
-	html = template.render(context)
-	pisa_status = pisa.CreatePDF(html, dest=response)
-	if pisa_status.err:
-		return HttpResponse('Имеют место технические неполадки <pre>' + html + '</pre>')
+
 	return response
+
 
 
 def get_win_sert(request):
@@ -86,6 +91,7 @@ def get_win_sert(request):
 			return redirect('magicflot:download_pdf', pk=winner.pk)
 	else:
 		winner_form = WinnerForm()
+
 	return render(request, 'magicflot/get_win_sert.html', {'winner_form': winner_form})
 
 

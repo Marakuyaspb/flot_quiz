@@ -32,7 +32,7 @@ window.addEventListener('beforeunload', async (event) => {
 });
 
 
-
+// Show clicked question & answers
 function showDetails(event){
 	let clicked_el = event.target;
     clicked_el.classList.add('i_was_clicked');;

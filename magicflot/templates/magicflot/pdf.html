@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,21 +14,21 @@
       body {
         margin: 0;
         padding: 0;
-        color: #5E5B5B;
+        color: #091e3d;
         font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: 400;
         font-style: normal;
+        
       }
       h1{
-        color: #5E5B5B;
-        font-size: 5em;
+        font-size: 4.5em;
         font-weight: 550;
       }
       h2{
-        font-size: 2em;
+        font-size: 1.8em;
       }
       .winner_about{
-        font-size: 1.3em;
+        font-size: 1.2em;
         line-height: .9;
       }
       table {
@@ -38,9 +39,12 @@
       }
       td {
         padding: 5px;
-      }  
+      }
+      p {
+        padding-bottom: 0;
+      }
       .padding_l2{
-        padding-left: 2em;
+        padding-left: 1.6em;
       }
       .right{
         text-align: right!important;
@@ -58,47 +62,47 @@
         margin-left: auto;
         margin-right: auto;
       }
-      .logo{
-        width: 250px;
-      }
       .stamp{
-        width: 250px;
+        width: 300px;
+        padding-top: 4em;
       }
-      hr{
-        color: #5E5B5B;
-      }
-      .wrapper{
 
+      .wrapper{
+        position: absolute;
+        z-index: 999;
+        background: transparent;
       }
       .winner_content{
-        padding: 2em;
-        z-index: 5!important;
+        padding: 4em 1em 1em 5em ;
       }
+
       .background-image {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 5;
-    }
+        z-index: -5;
+      }
     </style>
 </head>
 
 <body>
-<!-- <img class="background-image" src="{{ logo_url }}" /> -->
+<img class="background-image" src="{% static 'pdf/back_full.png' %}" />
 <div class='wrapper'>
-  
-  <div class='winner_content'>
+
+  <div class='winner_content center'>
+    
+    
     <table class='no_border'>
       <thead></thead>
       <tbody>
         <tr>
-          <td class='left no_border'>
-            <img class='' src='{{ partners_logos }}'>
-          </td>
+          <td class='left no_border'></td>
           
           <td class='right no_border'>
+            <br><br><br>
+
             <p>Сертификат участника № {{ winner.id }}</p>
             {% load tz %}
             {% get_current_timezone as TIME_ZONE %}
@@ -110,38 +114,40 @@
       </tbody>
     </table>
 
-    <br>
 
-    <center> 
+    <center class='center'> 
     
       <h1>СЕРТИФИКАТ</h1>
-      <p class='winner_about'>Награждается участник викторины по истории судостроения в России</p>
+      <p class='winner_about'>Награждается участник викторины по истории </p>
+      <p class='winner_about'>судостроения в России</p>
       <h2>{{ winner.first_name }} {{ winner.last_name }}</h2>
 
       <p class='winner_about'>
-    Идущий в будущее верным курсом на борту корабля знаний № {{ winner.school }} в составе экипажа {{ winner.the_class }}.
+      Идущий в будущее верным курсом на борту</p>
+      <p class='winner_about'>корабля знаний № {{ winner.school }} в составе экипажа {{ winner.the_class }}.
       </p>
     </center> 
 
-    <br><br><br><br>
+    <br><br>
 
     <table class='no_border'>
       <thead></thead>
       <tbody>
         <tr>
           <td class='padding_l2 left no_border'>
-            <p class='winner_about'>МБУ «Художественная галерея»
+            <p class=''>МБУ «Художественная галерея»
             </p>
-            <p class='winner_about'>г. Зеленодольск </p>
-            <p class='winner_about'>Директор  Т.П. Садкова</p>
+            <p class=''>г. Зеленодольск </p>
+            <p class=''>Директор  Т.П. Садкова</p>
           </td>
           
           <td class='no_border center'>
-             <img class='stamp' src='{{ stamp_official }}'>
+            <img class='stamp' src='{{ e_stamp_official }}'>
           </td>
         </tr>
       </tbody>
     </table>
+
   </div>
 </div>
 

@@ -1,12 +1,12 @@
-from django.urls import path, include
+from django.urls import path, include, reverse
 from django.conf import settings
 from django.conf.urls.static import static
 from magicflot import views
-from django.urls import reverse
-from magicflot import views
 from .views import save_game_session
 
+
 app_name = 'magicflot'
+
 
 urlpatterns = [
     path('', views.index, name = 'index'),
