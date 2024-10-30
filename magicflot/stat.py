@@ -28,7 +28,7 @@ def generate_pie_chart(game_sessions):
     question_true_count = 0
     question_false_count = 0
 
-    pie_chart_dir = os.path.join(settings.BASE_DIR, 'static/pies')
+    pie_chart_dir = os.path.join(settings.BASE_DIR, '..', 'static', 'pies')
     if not os.path.exists(pie_chart_dir):
         os.makedirs(pie_chart_dir)
 
@@ -67,7 +67,7 @@ def generate_pie_chart(game_sessions):
 
 def generate_easy(game_sessions):
     question_stats = defaultdict(lambda: {'True': 0, 'False': 0})
-    pie_chart_dir = os.path.join(settings.BASE_DIR, 'static/pies')
+    pie_chart_dir = os.path.join(settings.BASE_DIR, '..', 'static', 'pies')
 
     for session in game_sessions:
         for question_data in session['how_it_was']['answered_questions']:
@@ -109,9 +109,10 @@ def generate_easy(game_sessions):
     plt.savefig(os.path.join(pie_chart_dir, 'most_easy_chart.png'), transparent=True)
 
     
+
 def generate_hard(game_sessions):
     question_stats = defaultdict(lambda: {'True': 0, 'False': 0})
-    pie_chart_dir = os.path.join(settings.BASE_DIR, 'static/pies')
+    pie_chart_dir = os.path.join(settings.BASE_DIR, '..', 'static', 'pies')
 
     for session in game_sessions:
         for question_data in session['how_it_was']['answered_questions']:
@@ -158,8 +159,10 @@ def generate_hard(game_sessions):
     plt.savefig(os.path.join(pie_chart_dir, 'most_hard_chart.png'), transparent=True)
 
 
+
 def generate_bar(game_sessions):
-    bar_chart_dir = os.path.join(settings.BASE_DIR, 'static/bars')
+    #bar_chart_dir = os.path.join(settings.BASE_DIR, 'static/bars')
+    bar_chart_dir = os.path.join(settings.BASE_DIR, '..', 'static', 'bars')
 
     question_stats = defaultdict(lambda: {'True': 0, 'False': 0})
 
